@@ -8,16 +8,18 @@ from datetime import datetime
 
 
 class User:
-    def __init__(self, id, correct, wrong, last_answer, first_name, last_name, skipped):
+    def __init__(self, id, correct, wrong, last_answer, first_name, last_name, skipped, used):
         self.id = id
         self.correct = correct
         self.wrong = wrong
         self.last_answer = last_answer
         self.first_name = first_name
         self.last_name = last_name
-        self.skipped = 0
+        self.skipped = skipped
+        self.used = used
 
-
+# сделать мапу для всех слов, каждому слову свой номер, так будет проще
+# сделать нормально юзды
 ids = []
 link = {}
 global timer
@@ -50,7 +52,10 @@ def start_prog():
     text = open("bd.txt", "r")
     for line in text:
         a = line.split()
-        ids.append(User(int(a[0]), int(a[1]), int(a[2]), int(a[3]), a[4], a[5], int(a[6])))
+        used_local = {}
+        for i in range(6, len(a)):
+            used_local[a[i]] = 1
+        ids.append(User(int(a[0]), int(a[1]), int(a[2]), int(a[3]), a[4], a[5], int(a[6]), used_local))
 
 
 start_prog()
@@ -62,7 +67,7 @@ bot = telebot.TeleBot('1639467970:AAFaZC3aT_aJRlhEsULrDoVfjUx3EypiU_Y')
 def get_info():
     print("current users:")
     for i in range(len(ids)):
-        print(i + 1, ') ', ids[i].first_name, ' ', ids[i].last_name, ': correct: ', ids[i].correct, ', wrong: ',
+        print(i, ') ', ids[i].first_name, ' ', ids[i].last_name, ': correct: ', ids[i].correct, ', wrong: ',
               ids[i].wrong, ', last_ans = ', ids[i].last_answer, sep="")
 
 
@@ -77,7 +82,10 @@ def upd_b():
     file1 = open("bd.txt", "w")
     file1.truncate(0)
     for i in range(len(ids)):
-        file1.write(str(ids[i].id) + ' ' + str(ids[i].correct) + ' ' + str(ids[i].wrong) + ' ' + str(ids[i].last_answer) + ' ' + str(ids[i].first_name) + ' ' + str(ids[i].last_name) + ' ' + str(ids[i].skipped) + '\n')
+        used_str = ""
+        for j in ids[i].used.keys():
+            used_str += str(j) + ' '
+        file1.write(str(ids[i].id) + ' ' + str(ids[i].correct) + ' ' + str(ids[i].wrong) + ' ' + str(ids[i].last_answer) + ' ' + str(ids[i].first_name) + ' ' + str(ids[i].last_name) + ' ' + str(ids[i].skipped) + ' ' + used_str + '\n')
     file1.close()
 
 
@@ -132,15 +140,31 @@ def any_msg(message):
             s += '\n'
         bot.send_message(message.chat.id, s)
         return
-    ind = randint(0, len(link) - 1)
+
+    ind_ids = 0
+    for j in range(len(ids)):
+        if ids[j].id == message.chat.id:
+            ind_ids = j
+            break
+
+    if len(ids[ind_ids].used) == 324:
+        ids[ind_ids].used.clear()
+
     to_send = 'поставь ударение в слове '
     c = 0
     s = ""
-    for j in link.keys():
-        if c == ind:
-            s = j
+    while 1:
+        ind = randint(0, len(link) - 1)
+        c = 0
+        s = ""
+        for j in link.keys():
+            if c == ind:
+                s = j
+                break
+            c += 1
+        if s not in ids[ind_ids].used:
             break
-        c += 1
+
     to_send += s
     keyboard = types.InlineKeyboardMarkup()
     buttons = []
@@ -170,6 +194,7 @@ def callback_inline(call):
                 ids[i].correct += 1
                 ids[i].last_answer = get_time()
                 ids[i].skipped = 0
+                ids[i].used[link[call.data[4:].lower()]] = 1
                 upd_b()
     else:
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
