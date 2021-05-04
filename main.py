@@ -62,7 +62,7 @@ def start_prog():
 start_prog()
 algo()
 # algo
-bot = telebot.TeleBot('1639467970:AAFaZC3aT_aJRlhEsULrDoVfjUx3EypiU_Y')
+bot = telebot.TeleBot('1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc')
 
 
 def get_info():
