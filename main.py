@@ -236,12 +236,12 @@ def any_msg(message):
         for i in range(len(ids)):
             if ids[i].top == 0:
                 continue
-            s += str(place) + ") " + str(ids[i].rating) + " "
-            s += "- "
+            s += str(place) + ") "
             if str(ids[i].first_name) != "None":
                 s += str(ids[i].first_name) + " "
             if str(ids[i].last_name) != "None":
                 s += str(ids[i].last_name) + " "
+            s += "- " + str(ids[i].rating)
             s += '\n'
             place += 1
         bot.send_message(message.chat.id, s)
@@ -296,7 +296,7 @@ def any_msg(message):
     else:
         print(message.from_user.first_name, message.from_user.last_name, "сказал", message.text)
         upd_b()
-        bot.send_message(message.chat.id, "я, скорее всего, еще туповат, чтобы понять, что тут написано...")
+        bot.send_message(message.chat.id, "я, скорее всего, еще туповат, чтобы понять, что тут написано...", reply_markup=keyboard_main)
 
 
 @bot.callback_query_handler(func=lambda call: True)  # реакция на ответ на задачу
