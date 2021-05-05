@@ -16,9 +16,9 @@ class User:
         self.first_name = first_name
         self.last_name = last_name
         self.skipped = skipped
-        self.used = used
         self.top = top
         self.rating = rating
+        self.used = used
         self.achievements = achievements
 
 words = []
@@ -36,6 +36,8 @@ def algo():
         if ok == 0:
             ok = 1
             continue
+        if i == "\n":
+            continue
         temp = i.split("\n")
         if words.count(temp[0]) == 0:
             words.append(temp[0])
@@ -52,18 +54,42 @@ def algo():
 
 
 def start_prog():
-    text = open("bd.txt", "r")
-    for line in text:
+    text_main = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info.txt", "r")
+    text_used = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_used_info.txt", "r")
+    text_achievements = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_achievements_info.txt", "r")
+    users = 0
+    for _ in text_main:
+        users += 1
+    text_main.close()
+    used_local = [[[0] * 2 for _ in range(len(words))] for i in range(users)]
+    achievements_local = [[0] * len(all_achievements) for _ in range(users)]
+    ind = 0
+    for line in text_used:
         a = line.split()
-        used_local = [[0] * 2 for i in range(len(words))]
-        for i in range(0, len(words) - 1):
-            used_local[i][0] = int(a[2 * i + 9])
-            used_local[i][1] = int(a[2 * i + 1 + 9])
-        achievements_local = []
-        for i in range(9 + 2 * len(used_local), len(a)):
-            achievements_local.append(int(a[i]))
-        ids.append(User(int(a[0]), int(a[1]), int(a[2]), int(a[3]), a[4], a[5], int(a[6]), int(a[7]), int(a[8]), used_local, achievements_local))
-
+        for i in range(len(words)):
+            used_local[ind][i][0] = int(a[2 * i + 1])
+            used_local[ind][i][1] = int(a[2 * i + 1 + 1])
+        ind += 1
+    ind = 0
+    for line in text_achievements:
+        a = line.split()
+        for i in range(len(all_achievements)):
+            achievements_local[ind][i] = int(a[i + 1])
+        ind += 1
+    ind = 0
+    text_main = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info.txt", "r")
+    for line in text_main:
+        a = line.split()
+        ids.append(User(int(a[0]),
+                        int(a[1]),
+                        int(a[2]),
+                        int(a[3]),
+                        a[4],
+                        a[5],
+                        int(a[6]),
+                        int(a[7]),
+                        int(a[8]), used_local[ind], achievements_local[ind]))
+        ind += 1
 
 algo()
 start_prog()
@@ -79,24 +105,57 @@ def get_info():
 
 
 def upd_b():
-    file1 = open("bd.txt", "r")
-    file2 = open("bd_backup.txt", "w")
+    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info.txt", "r")
+    file2 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info_backup.txt", "w")
     file2.truncate(0)
     for line in file1:
         file2.write(line)
     file1.close()
     file2.close()
-    file1 = open("bd.txt", "w")
+    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info.txt", "w")
     file1.truncate(0)
     for i in range(len(ids)):
-        used_str = ""
-        for k in range(len(words)):
-            used_str += str(ids[i].used[k][0]) + ' ' + str(ids[i].used[k][1]) + ' '
-        ach_str = ""
-        for k in range(len(ids[i].achievements)):
-            ach_str += str(ids[i].achievements[k]) + ' '
-        file1.write(str(ids[i].id) + ' ' + str(ids[i].correct) + ' ' + str(ids[i].wrong) + ' ' + str(ids[i].last_answer) + ' ' + str(ids[i].first_name) + ' ' + str(ids[i].last_name) + ' ' + str(ids[i].skipped) + ' ' + str(ids[i].top) + ' ' + str(ids[i].rating) + ' '
-                    + used_str + ach_str + '\n')
+        file1.write(str(ids[i].id) + ' '
+                    + str(ids[i].correct) + ' '
+                    + str(ids[i].wrong) + ' '
+                    + str(ids[i].last_answer) + ' '
+                    + str(ids[i].first_name) + ' '
+                    + str(ids[i].last_name) + ' '
+                    + str(ids[i].skipped) + ' '
+                    + str(ids[i].top) + ' '
+                    + str(ids[i].rating) + '\n')
+    file1.close()
+
+    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_used_info.txt", "r")
+    file2 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_used_info_backup.txt", "w")
+    file2.truncate(0)
+    for line in file1:
+        file2.write(line)
+    file1.close()
+    file2.close()
+    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_used_info.txt", "w")
+    file1.truncate(0)
+    for i in range(len(ids)):
+        used_write = ""
+        for j in range(len(ids[i].used)):
+            used_write += str(ids[i].used[j][0]) + ' ' + str(ids[i].used[j][1]) + ' '
+        file1.write(str(ids[i].id) + ' ' + used_write + '\n')
+    file1.close()
+
+    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_achievements_info.txt", "r")
+    file2 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_achievements_info_backup.txt", "w")
+    file2.truncate(0)
+    for line in file1:
+        file2.write(line)
+    file1.close()
+    file2.close()
+    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_achievements_info.txt", "w")
+    file1.truncate(0)
+    for i in range(len(ids)):
+        ach_write = ""
+        for j in range(len(ids[i].achievements)):
+            ach_write += str(ids[i].achievements[j]) + ' '
+        file1.write(str(ids[i].id) + ' ' + ach_write + '\n')
     file1.close()
 
 
@@ -217,7 +276,7 @@ def any_msg(message):
                 s = words[word_ind]
                 break
         ids[ind_ids].used[word_ind][0] += 1
-        to_send += s
+        to_send += '*' + s + '*'
         keyboard = types.InlineKeyboardMarkup()
         buttons = []
         for i in range(len(s)):
@@ -233,7 +292,7 @@ def any_msg(message):
 
         for i in range(len(buttons)):
             keyboard.add(buttons[i])
-        bot.send_message(message.chat.id, to_send, reply_markup=keyboard)
+        bot.send_message(message.chat.id, to_send, reply_markup=keyboard, parse_mode='MarkdownV2')
     else:
         print(message.from_user.first_name, message.from_user.last_name, "сказал", message.text)
         upd_b()
