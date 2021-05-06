@@ -26,6 +26,13 @@ ids = []
 link = {}
 global timer
 all_achievements = ['разблокировать все слова', '100 правильных слов']
+ranks = ["победитель олимпиады \"Русский медвежонок\"",
+         "победитель ВСоШ по русскому языку", "призер ВСоШ по русскому языку", "участник ВСоШ по русскому языку",
+         "победитель региона по русскому языку", "призер региона по русскому языку", "участник региона по русскому языку",
+         "победитель муниципа по русскому языку", "призер муниципа по русскому языку", "участник муниципа по русскому языку",
+         "победитель школьного этапа по русскому языку", "призер школьного этапа по русскому языку", "участник школьного этапа по русскому языку"]
+
+
 
 # algo
 def algo():
@@ -54,9 +61,9 @@ def algo():
 
 
 def start_prog():
-    text_main = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info.txt", "r")
-    text_used = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_used_info.txt", "r")
-    text_achievements = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_achievements_info.txt", "r")
+    text_main = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r")
+    text_used = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info.txt", "r")
+    text_achievements = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info.txt", "r")
     users = 0
     for _ in text_main:
         users += 1
@@ -77,7 +84,7 @@ def start_prog():
             achievements_local[ind][i] = int(a[i + 1])
         ind += 1
     ind = 0
-    text_main = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info.txt", "r")
+    text_main = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r")
     for line in text_main:
         a = line.split()
         ids.append(User(int(a[0]),
@@ -105,14 +112,14 @@ def get_info():
 
 
 def upd_b():
-    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info.txt", "r")
-    file2 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info_backup.txt", "w")
+    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r")
+    file2 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info_backup.txt", "w")
     file2.truncate(0)
     for line in file1:
         file2.write(line)
     file1.close()
     file2.close()
-    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_main_info.txt", "w")
+    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "w")
     file1.truncate(0)
     for i in range(len(ids)):
         file1.write(str(ids[i].id) + ' '
@@ -126,14 +133,14 @@ def upd_b():
                     + str(ids[i].rating) + '\n')
     file1.close()
 
-    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_used_info.txt", "r")
-    file2 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_used_info_backup.txt", "w")
+    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info.txt", "r")
+    file2 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info_backup.txt", "w")
     file2.truncate(0)
     for line in file1:
         file2.write(line)
     file1.close()
     file2.close()
-    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_used_info.txt", "w")
+    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info.txt", "w")
     file1.truncate(0)
     for i in range(len(ids)):
         used_write = ""
@@ -142,14 +149,14 @@ def upd_b():
         file1.write(str(ids[i].id) + ' ' + used_write + '\n')
     file1.close()
 
-    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_achievements_info.txt", "r")
-    file2 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_achievements_info_backup.txt", "w")
+    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info.txt", "r")
+    file2 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info_backup.txt", "w")
     file2.truncate(0)
     for line in file1:
         file2.write(line)
     file1.close()
     file2.close()
-    file1 = open(r"C:\Users\tydo_\PythonAcclication1\rus_ege_bot\dbs\db_achievements_info.txt", "w")
+    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info.txt", "w")
     file1.truncate(0)
     for i in range(len(ids)):
         ach_write = ""
@@ -219,12 +226,18 @@ def start(message):
 @bot.message_handler(content_types=["text"])  # ответ на любой текст
 def any_msg(message):
     if message.text.lower() == 'статы':
+        ids.sort(key=comparator, reverse=True)
         ind = get_id(message.chat.id)
         sum = get_sum(ind)
         if ids[ind].achievements[0] == 1:
             sum = len(words)
+        zvanie = ranks[min(len(ranks) - 1, ind)]
+        if (ids[ind].top == 0):
+            zvanie = "т.к. ты не отображаешься в топе, у тебя нет звания :("
         bot.send_message(message.chat.id,
                          "твои статы:\nрейтинг: " + str(ids[ind].rating)
+                         + "\nместо в топе: " + str(ind + 1)
+                         + "\nзвание: " + zvanie
                          + "\nправильных ответов: " + str(ids[ind].correct)
                          + "\nнеправильных ответов: " + str(ids[ind].wrong)
                          + "\nразблокировано слов: " + str(sum) + " / " + str(len(words)))
@@ -232,16 +245,17 @@ def any_msg(message):
     elif message.text.lower() == 'топ':
         ids.sort(key=comparator, reverse=True)
         s = "текущий топ по рейтингу:\n"
-        place = 1
+        place = 0
         for i in range(len(ids)):
+            zvanie = ranks[min(len(ranks) - 1, place)]
             if ids[i].top == 0:
                 continue
-            s += str(place) + ") "
+            s += str(place + 1) + ") "
             if str(ids[i].first_name) != "None":
                 s += str(ids[i].first_name) + " "
             if str(ids[i].last_name) != "None":
                 s += str(ids[i].last_name) + " "
-            s += "- " + str(ids[i].rating)
+            s += "- " + str(ids[i].rating) + " (" + zvanie + ")"
             s += '\n'
             place += 1
         bot.send_message(message.chat.id, s)
