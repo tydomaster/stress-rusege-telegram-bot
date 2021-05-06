@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 class User:
-    def __init__(self, id, correct, wrong, last_answer, first_name, last_name, skipped, top, rating, used, achievements):
+    def __init__(self, id, correct, wrong, last_answer, first_name, last_name, skipped, top, rating, streak, used, achievements):
         self.id = id
         self.correct = correct
         self.wrong = wrong
@@ -20,6 +20,7 @@ class User:
         self.rating = rating
         self.used = used
         self.achievements = achievements
+        self.streak = streak
 
 words = []
 ids = []
@@ -95,20 +96,17 @@ def start_prog():
                         a[5],
                         int(a[6]),
                         int(a[7]),
-                        int(a[8]), used_local[ind], achievements_local[ind]))
+                        int(a[8]),
+                        int(a[9]),
+                        used_local[ind], achievements_local[ind]))
         ind += 1
 
 algo()
+print('algo ok, loaded', len(words), 'words')
 start_prog()
+print('start_prog ok, loaded', len(ids), 'users')
 # algo
 bot = telebot.TeleBot('1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc')
-
-
-def get_info():
-    print("current users:")
-    for i in range(len(ids)):
-        print(i, ') ', ids[i].first_name, ' ', ids[i].last_name, ': correct: ', ids[i].correct, ', wrong: ',
-              ids[i].wrong, ', last_ans = ', ids[i].last_answer, sep="")
 
 
 def upd_b():
@@ -130,7 +128,8 @@ def upd_b():
                     + str(ids[i].last_name) + ' '
                     + str(ids[i].skipped) + ' '
                     + str(ids[i].top) + ' '
-                    + str(ids[i].rating) + '\n')
+                    + str(ids[i].rating) + ' '
+                    + str(ids[i].streak) + '\n')
     file1.close()
 
     file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info.txt", "r")
@@ -164,6 +163,7 @@ def upd_b():
             ach_write += str(ids[i].achievements[j]) + ' '
         file1.write(str(ids[i].id) + ' ' + ach_write + '\n')
     file1.close()
+    print('dbs updated')
 
 
 def get_time():
@@ -215,16 +215,20 @@ callback_buttons_top.add(callback_button_top2)
 def start(message):
     ind = get_id(message.chat.id)
     if ind != -1:
+        print(ids[ind].first_name, ids[ind].last_name, 'said /start')
         bot.reply_to(message, f'мы уже здоровались!', reply_markup=keyboard_main)
         return
+    print('new user', message.chat.first_name, message.chat.last_name , 'said /start')
     new_used = [[0] * 2 for i in range(len(words))]
     new_ach = [0] * len(all_achievements)
-    ids.append(User(message.chat.id, 0, 0, get_time(), message.chat.first_name, message.chat.last_name, 0, 1, 0, new_used, new_ach))
+    ids.append(User(message.chat.id, 0, 0, get_time(), message.chat.first_name, message.chat.last_name, 0, 1, 0, 0, new_used, new_ach))
+    print('registered', message.chat.first_name, message.chat.last_name, 'with ind', get_id(message.chat.id))
     bot.reply_to(message, f'привет! готов закидать тебя словами! советую заглянуть в настройки, а то мало ли что...', reply_markup=keyboard_main)
     upd_b()
 
 @bot.message_handler(content_types=["text"])  # ответ на любой текст
 def any_msg(message):
+    print(message.chat.first_name, message.chat.last_name, 'said', message.text)
     if message.text.lower() == 'статы':
         ids.sort(key=comparator, reverse=True)
         ind = get_id(message.chat.id)
@@ -234,14 +238,23 @@ def any_msg(message):
         zvanie = ranks[min(len(ranks) - 1, ind)]
         if (ids[ind].top == 0):
             zvanie = "т.к. ты не отображаешься в топе, у тебя нет звания :("
+        if ids[ind].streak >= 10:
+            streak = '+' + str(ids[ind].streak) + '🔥'
+        elif ids[ind].streak > 0:
+            streak = '+' + str(ids[ind].streak)
+        elif ids[ind].streak < 0:
+            streak = str(ids[ind].streak)
+        else:
+            streak = '0'
         bot.send_message(message.chat.id,
-                         "твои статы:\nрейтинг: " + str(ids[ind].rating)
+                         "личная статистика.\nрейтинг: " + str(ids[ind].rating)
                          + "\nместо в топе: " + str(ind + 1)
                          + "\nзвание: " + zvanie
                          + "\nправильных ответов: " + str(ids[ind].correct)
                          + "\nнеправильных ответов: " + str(ids[ind].wrong)
+                         + "\nтекущий стрик: " + streak
                          + "\nразблокировано слов: " + str(sum) + " / " + str(len(words)))
-        return
+        print('gave', message.chat.first_name, message.chat.last_name, 'stats')
     elif message.text.lower() == 'топ':
         ids.sort(key=comparator, reverse=True)
         s = "текущий топ по рейтингу:\n"
@@ -259,16 +272,19 @@ def any_msg(message):
             s += '\n'
             place += 1
         bot.send_message(message.chat.id, s)
-        return
+        print('gave', message.chat.first_name, message.chat.last_name, 'top')
     elif message.text.lower() == 'настройки':
         bot.send_message(message.chat.id, "да, настроек пока маловато... но это же лучше, чем ничего?", reply_markup=keyboard_settings)
+        print('gave', message.chat.first_name, message.chat.last_name, 'settings')
     elif message.text.lower() == 'настройки отображения в топе':
         bot.send_message(message.chat.id, "отображать ли тебя в топе?", reply_markup=callback_buttons_top)
+        print('gave', message.chat.first_name, message.chat.last_name, 'settings in top')
     elif message.text.lower() == 'выйти из настроек':
         bot.send_message(message.chat.id, "скорее всего, выйти из настроек можно без сообщения, но я не смог нагуглить то, как это сделать, поэтому могу просто сказать, что на " + str(randint(0, 100)) + "% ты лох))))))", reply_markup=keyboard_main)
+        print('gave', message.chat.first_name, message.chat.last_name, 'exit from settings')
     elif message.text.lower() == 'достижения':
         ind = get_id(message.chat.id)
-        text = "достижения:\n"
+        text = "достижения🏆\n"
         for i in range(len(all_achievements)):
             if ids[ind].achievements[i] == 1:
                 text += str(i + 1) + "\) " + all_achievements[i]
@@ -276,6 +292,7 @@ def any_msg(message):
                 text += str(i + 1) + "\) ~" + all_achievements[i] + "~"
             text += '\n'
         bot.send_message(message.chat.id, text, parse_mode='MarkdownV2')
+        print('gave', message.chat.first_name, message.chat.last_name, 'achievements')
     elif message.text.lower() == 'слово!':
         ind_ids = get_id(message.chat.id)
         sum = get_sum(ind_ids)
@@ -307,8 +324,9 @@ def any_msg(message):
         for i in range(len(buttons)):
             keyboard.add(buttons[i])
         bot.send_message(message.chat.id, to_send, reply_markup=keyboard, parse_mode='MarkdownV2')
+        print('gave', message.chat.first_name, message.chat.last_name, 'word', words[word_ind])
     else:
-        print(message.from_user.first_name, message.from_user.last_name, "сказал", message.text)
+        print(message.from_user.first_name, message.from_user.last_name, "said", message.text)
         upd_b()
         bot.send_message(message.chat.id, "я, скорее всего, еще туповат, чтобы понять, что тут написано...", reply_markup=keyboard_main)
 
@@ -324,40 +342,55 @@ def callback_inline(call):
             r = 2
             ed_r = " единицы рейтинга"
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                              text="правильно! ответ: " + link[call.data[4:].lower()] + "\nты получил " + str(r) + ed_r)
+                              text="правильно✅\nответ: " + link[call.data[4:].lower()] + "\nты получил " + str(r) + ed_r)
         ids[ind].correct += 1
         ids[ind].last_answer = get_time()
         ids[ind].skipped = 0
         ids[ind].used[words.index(link[call.data[4:].lower()].lower())][1] += 1
         ids[ind].rating += r
+        if ids[ind].streak < 0:
+            ids[ind].streak = 1
+        else:
+            ids[ind].streak += 1
+        print(call.message.chat.first_name, call.message.chat.last_name, 'answered', link[call.data[4:].lower()].lower(), 'correct, +', r, 'rating')
         if get_sum(ind) == len(words) and ids[ind].achievements[0] == 0:
-            bot.send_message(chat_id=call.message.chat.id, text="получено достижение! все слова были разблокированы!")
+            bot.send_message(chat_id=call.message.chat.id, text="получено достижение🏆!\nвсе слова были разблокированы!")
             ids[ind].achievements[0] = 1
+            print(call.message.chat.first_name, call.message.chat.last_name, 'got achievement 0')
         if ids[ind].correct == 100:
-            bot.send_message(chat_id=call.message.chat.id, text="получено достижение! 100 правильных слов!")
+            bot.send_message(chat_id=call.message.chat.id, text="получено достижение🏆!\n100 правильных слов!")
             ids[ind].achievements[1] = 1
+            print(call.message.chat.first_name, call.message.chat.last_name, 'got achievement 1')
         upd_b()
     elif len(call.data) >= 3 and call.data[:3] == "bad":
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                              text="неправильно... ответ был: " + link[call.data[3:].lower()] + "\nты потерял 1 единицу рейтинга...")
+                              text="неправильно❌\nответ был: " + link[call.data[3:].lower()] + "\nты потерял 1 единицу рейтинга")
+        print(call.message.chat.first_name, call.message.chat.last_name, 'answered',
+              link[call.data[3:].lower()].lower(), 'wrong, -1 rating')
         ind = get_id(call.message.chat.id)
         ids[ind].wrong += 1
         ids[ind].last_answer = get_time()
         ids[ind].skipped = 0
         ids[ind].rating -= 1
         ids[ind].rating = max(ids[ind].rating, 0)
+        if ids[ind].streak > 0:
+            ids[ind].streak = -1
+        else:
+            ids[ind].streak -= 1
         upd_b()
     elif len(call.data) >= 7 and call.data[:7] == "top_yes":
         bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
         bot.send_message(chat_id=call.message.chat.id,
                          text="окей! надеюсь, ты сможешь покорить вершину!")
         ind = get_id(call.message.chat.id)
+        print(call.message.chat.first_name, call.message.chat.last_name, 'now in top')
         ids[ind].top = 1
     elif len(call.data) >= 6 and call.data[:6] == "top_no":
         bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
         bot.send_message(chat_id=call.message.chat.id,
                          text="хорошо, скрываю тебя...")
         ind = get_id(call.message.chat.id)
+        print(call.message.chat.first_name, call.message.chat.last_name, 'now not in top')
         ids[ind].top = 0
 
 
@@ -384,14 +417,17 @@ def test():  # предложение ответить на вопрос каж�
         for i in range(len(ids)):
             if nowtime - int(ids[i].last_answer) >= 1 and ids[i].skipped < 3:
                 ids[i].skipped += 1
+                print('notification for', ids[i].first_name, ids[i].last_name)
                 bot.send_message(chat_id=ids[i].id,
                                  text="привет! для тебя есть новое задание! если хочешь получить, нажми на кнопочку)")
             elif ids[i].skipped >= 3 and ids[i].skipped < 4 and nowtime - int(ids[i].last_answer) >= 5:
                 ids[i].skipped += 1
+                print('notification for', ids[i].first_name, ids[i].last_name)
                 bot.send_message(chat_id=ids[i].id,
                                  text="привет! давно тебя не было в уличных гонках! если хочешь получить вопросик, нажми на кнопочку)")
             elif ids[i].skipped >= 4 and ids[i].skipped < 5 and nowtime - int(ids[i].last_answer) >= 5:
                 ids[i].skipped += 1
+                print('last notification for', ids[i].first_name, ids[i].last_name)
                 bot.send_message(chat_id=ids[i].id,
                                  text="привет! последний раз предлагаю тебе вспомнить про ударения на егэ!")
 
