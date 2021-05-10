@@ -6,6 +6,10 @@ from time import sleep
 from functools import wraps
 from datetime import datetime
 import logging
+import sys
+import codecs
+
+# sys.stdout.reconfigure(encoding='utf-8')
 
 # logs
 
@@ -14,7 +18,7 @@ nowtimestr = nowtimestr.replace(' ', '-')
 nowtimestr = nowtimestr.replace('.', '-')
 nowtimestr = nowtimestr.replace(':', '-')
 path = r"C:\Users\tydo_\a\rus_ege_bot\logs\bot-" + nowtimestr + ".log"
-logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s", filename=path, filemode="w")
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s", filename=path, filemode="w", encoding='utf-8')
 
 #
 
@@ -101,21 +105,13 @@ callback_buttons_top.add(callback_button_top2)
 #клавиатуры_end
 
 
-# algo
-def algo():
-    n = open("udars.txt", "r", encoding="utf-8")
+def words_fill():
+    n = open("udareniya.txt", "r", encoding="utf-8")
     t = n.readlines()
-    ok = 1
     for i in t:
-        if ok == 0:
-            ok = 1
-            continue
-        if i == "\n":
-            continue
         temp = i.split("\n")
         if words.count(temp[0]) == 0:
             words.append(temp[0])
-            ok = 0
 
     for i in range(len(words)):
         s = words[i]
@@ -123,20 +119,19 @@ def algo():
             if s[j] == s[j].upper():
                 link[s.lower()] = s
                 break
-
-
     for i in range(len(words)):
         words[i] = words[i].lower()
     n.close()
 
     words_debug = "words:\n"
     for i in range(len(words)):
-        words_debug += str(i) + ") " + words[i] + "\n"
+        words_debug += str(i) + ')' + words[i] + "\n"
+    print(words_debug)
     logging.debug(words_debug)
 
 
 def start_prog():
-    text_main = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r")
+    text_main = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r", encoding='utf8')
     text_used = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info.txt", "r")
     text_achievements = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info.txt", "r")
     users = 0
@@ -159,7 +154,7 @@ def start_prog():
             achievements_local[ind][i] = int(a[i + 1])
         ind += 1
     ind = 0
-    text_main = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r")
+    text_main = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r", encoding='utf8')
     for line in text_main:
         a = line.split()
         ids.append(User(int(a[0]),
@@ -181,25 +176,26 @@ def start_prog():
         ids_debug += str(i) + ") " + str(ids[i].id) + ' ' + ids[i].first_name + ' ' + ids[i].last_name + "\n"
     logging.debug(ids_debug)
 
-algo()
+words_fill()
 print(get_time() + ':: ' + 'words loaded, count= ' + str(len(words)))
 logging.info('words loaded, count= ' + str(len(words)))
 start_prog()
 print(get_time() + ':: ' + 'users loaded, count= ' + str(len(ids)))
 logging.info('users loaded, count= ' + str(len(ids)))
-# algo
+
+
 bot = telebot.TeleBot('1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc')
 
 
 def upd_b():
-    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r")
-    file2 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info_backup.txt", "w")
+    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r", encoding='utf8')
+    file2 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info_backup.txt", "w", encoding='utf8')
     file2.truncate(0)
     for line in file1:
         file2.write(line)
     file1.close()
     file2.close()
-    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "w")
+    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "w", encoding='utf8')
     file1.truncate(0)
     for i in range(len(ids)):
         file1.write(str(ids[i].id) + ' '
@@ -300,6 +296,7 @@ def get_names_ind(ind):
 
 @bot.message_handler(commands=['start'])  # ответ на команду /start
 def start(message):
+    print(message.chat.username)
     logging.info(get_names_msg(message) + ' pressed /start')
     print(get_time() + ':: ' + get_names_msg(message) + ' pressed /start')
     ind = get_id(message.chat.id)
@@ -330,8 +327,8 @@ def any_msg(message):
         top = str(ind + 1)
         zvanie = ranks[min(len(ranks) - 1, ind)]
         if ids[ind].top == 0:
-            top = "ты не отображаешься в топе =("
-            zvanie = "нет в топе - нет звания("
+            top = "ты не отображаешься в топе \=\("
+            zvanie = "нет в топе \- нет звания\("
         if ids[ind].streak >= 50:
             streak = '\+' + str(ids[ind].streak) + '🔥'
         elif ids[ind].streak > 0:
@@ -504,7 +501,7 @@ def any_msg(message):
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' word ' + words[word_ind])
         logging.info('gave ' + get_names_msg(message) + ' word ' + words[word_ind])
     elif message.text.lower() == 'помощь':
-        bot.send_message(message.chat.id, "по всем вопросам/предложениям/советам писать @Rustam_Fakhretdinov", reply_markup=keyboard_main)
+        bot.send_message(message.chat.id, "по всем вопросам/предложениям/советам/багам писать @Rustam_Fakhretdinov", reply_markup=keyboard_main)
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' help')
         logging.info('gave ' + get_names_msg(message) + ' help')
@@ -681,7 +678,7 @@ def multi_threading(func):  # Декоратор для запуска функ�
 @multi_threading
 def test():  # предложение ответить на вопрос каждые N единиц времени
     while 1:
-        sleep(3600)
+        sleep(18000)
         if datetime.now().hour >= 23 or datetime.now().hour <= 9:
             continue
         nowtime = get_time_for_notif()

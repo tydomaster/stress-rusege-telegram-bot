@@ -1,0 +1,605 @@
+2021-05-08 17:36:11,894 DEBUG words:
+0)облегч»т
+1)облегч»ть
+2)ободралј
+3)ободр»шьс€
+4)прож»вший
+5)зав»дно
+6)кормящий
+7)молящий
+8)нанявшийс€
+9)корџсть
+10)крјны
+11)крем≈нь
+12)кремня
+13)начјвший
+14)перезвон»ть
+15)перезвон»т
+16)баловјть
+17)баловјтьс€
+18)избаловјть
+19)разбаловјть
+20)доз»ровать
+21)добралјсь
+22)добралј
+23)гналјсь
+24)крас»вее
+25)крас»вейший
+26)облилјсь
+27)эксп≈рт
+28)мусоропровќд
+29)газопровќд
+30)нефтепровќд
+31)водопровќд
+32)парт≈р
+33)отбылј
+34)обогналј
+35)перелилј
+36)позвон»т
+37)сн€лј
+38)сор»т
+39)пр»н€тый
+40)опломбировјть
+41)аэропќрты
+42)ерет»к
+43)ќтрочество
+44)сирќты
+45)ловкј
+46)обостр»ть
+47)ободр»ть
+48)сл»ва
+49)насор»т
+50)убыстр»ть
+51)довез≈нный
+52)зјтемно
+53)диалќг
+54)монолќг
+55)некролќг
+56)опќшлить
+57)сортировјть
+58)премировјть
+59)накрен»тс€
+60)налилј
+61)нарвалј
+62)обзвон»ть
+63)обзвон»т
+64)полож»л
+65)зак”порить
+66)прин”дить
+67)убралј
+68)углуб»ть
+69)лилј
+70)лилјсь
+71)навралј
+72)зјгод€
+73)отдјв
+74)подняв
+75)к”хонный
+76)смазл»ва
+77)суетл»ва
+78)болтл»ва
+79)бал”€сь
+80)отключ≈нный
+81)исч≈рпать
+82)дозвонятс€
+83)нќвости
+84)новост≈й
+85)м≈стностей
+86)квартјл
+87)килом≈тр
+88)сантим≈тр
+89)децим≈тр
+90)миллим≈тр
+91)нам≈рение
+92)обн€лјсь
+93)оптќвый
+94)бќроду
+95)л≈кторы
+96)моза»чный
+97)вернј
+98)воссоздалј
+99)пр»был
+100)портф≈ль
+101)пќручни
+102)придјное
+103)призџв
+104)нарќст
+105)н≈друг
+106)нед”г
+107)каталќг
+108)н≈нависть
+109)тамќжн€
+110)тќрты
+111)тќртов
+112)цем≈нт
+113)сверл»т
+114)подел≈нный
+115)ободр≈нный
+116)дон≈льз€
+117)зак”порив
+118)плодонос»ть
+119)восприн€лј
+120)бралјсь
+121)жилќсь
+122)пон€лј
+123)надел»т
+124)отозвалј
+125)отозвалјсь
+126)балќванный
+127)кровоточјщий
+128)низвед≈нный
+129)шоф≈р
+130)киоск≈р
+131)контрол≈р
+132)граждјнство
+133)деф»с
+134)вероиспов≈дание
+135)диспанс≈р
+136)договор≈нность
+137)начјвшись
+138)нав≈рх
+139)осв≈домишьс€
+140)полилј
+141)лгалј
+142)дозвон»тс€
+143)вз€лјсь
+144)надќлго
+145)поняв
+146)запертј
+147)определ≈н
+148)включ»т
+149)включ»м
+150)нќготь
+151)нќгт€
+152)жалюз»
+153)знјчимость
+154)»ксы
+155)ч≈люстей
+156)добелј
+157)св≈кла
+158)отдалј
+159)пр»было
+160)ч≈рпать
+161)бухгјлтеров
+162)стјту€
+163)столяр
+164)маляр
+165)дояр
+166)школяр
+167)прозорл»ва
+168)включ»шь
+169)включ≈нный
+170)включ≈н
+171)прируч≈нный
+172)сверл»шь
+173)озлќбить
+174)сл»вовый
+175)зјн€л
+176)отк”порил
+177)послјла
+178)ср≈дства
+179)созџв
+180)л≈кторов
+181)дќверху
+182)кќнусы
+183)кќнусов
+184)докум≈нт
+185)дос”г
+186)лыжня
+187)пќчестей
+188)щ≈лкать
+189)прибџв
+190)ненадќлго
+191)надорвалјсь
+192)ждалј
+193)гналј
+194)зјгнутый
+195)наж»вший
+196)повтор≈нный
+197)сќгнутый
+198)начјв
+199)создалј
+200)бјнты
+201)нормировјть
+202)цепќчка
+203)шјрфы
+204)бјловень
+205)вруч»т
+206)звон»т
+207)клјла
+208)крјлась
+209)одолж»т
+
+2021-05-08 17:36:11,895 INFO words loaded, count= 210
+2021-05-08 17:36:11,897 DEBUG users:
+0) 497421569 Rustam Fakhretdinov
+1) 873809387 Valeriya Bass
+2) 817831255 —аша None
+3) 1698886007 ¬иктори€ None
+4) 413524472 Wigga None
+
+2021-05-08 17:36:11,897 INFO users loaded, count= 5
+2021-05-08 17:36:11,905 DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-08 17:36:32,093 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:36:52,142 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:37:12,192 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:37:32,242 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:37:52,296 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:38:12,349 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:38:32,400 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:38:52,459 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:39:12,511 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:39:32,568 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:39:52,620 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:40:12,672 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:40:32,726 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:40:52,778 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:41:12,836 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:41:32,887 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:41:52,939 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:42:12,991 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:42:33,047 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:42:53,098 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:43:13,150 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:43:33,201 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:43:53,255 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:44:13,312 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:44:33,366 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:44:53,419 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:45:13,475 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:45:33,528 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:45:53,581 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:46:13,634 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:46:33,688 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:46:53,742 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:47:13,801 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:47:33,855 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:47:53,913 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:48:13,971 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:48:34,023 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:48:54,077 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:49:14,128 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:49:34,182 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:49:54,234 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:50:14,287 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:50:34,344 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:50:54,400 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:51:14,453 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:51:34,504 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:51:54,558 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:52:14,610 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:52:34,666 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:52:54,719 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:53:14,771 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:53:34,831 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:53:54,884 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:54:14,940 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:54:35,003 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:54:55,056 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:55:15,113 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:55:35,167 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:55:55,223 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:56:15,279 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:56:35,333 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:56:55,389 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:57:15,443 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:57:35,501 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:57:55,560 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:58:15,614 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:58:35,668 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:58:55,726 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:59:15,781 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:59:35,840 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 17:59:55,894 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:00:15,945 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:00:36,002 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:00:56,065 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:01:16,125 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:01:36,178 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:01:56,231 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:02:16,283 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:02:36,335 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:02:56,388 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:03:16,441 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:03:36,498 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:03:56,564 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:04:16,625 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:04:36,679 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:04:56,742 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:05:16,796 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:05:36,851 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:05:56,908 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:06:16,963 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:06:37,026 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:06:57,088 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:07:17,153 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:07:37,212 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:07:57,267 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:08:17,321 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:08:37,371 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:08:57,427 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:09:17,480 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:09:37,533 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:09:37,544 DEBUG Resetting dropped connection: api.telegram.org
+2021-05-08 18:09:57,766 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:10:17,820 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:10:37,876 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:10:57,932 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:11:17,996 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:11:38,056 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:11:58,111 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:12:18,170 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:12:38,229 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:12:58,300 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:13:18,354 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:13:38,405 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:13:58,458 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:14:18,507 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:14:38,554 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:14:58,602 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:15:18,654 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:15:38,706 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:15:58,755 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:16:18,805 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:16:38,858 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:16:58,918 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:17:18,975 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:17:39,034 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:17:59,088 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:18:19,146 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:18:39,200 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:18:59,256 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:19:19,309 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:19:39,362 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:19:59,418 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:20:19,474 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:20:39,533 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:20:59,588 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:21:19,648 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:21:39,704 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:21:59,755 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:22:19,806 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:22:39,859 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:22:59,911 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:23:19,964 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:23:40,016 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:24:00,067 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:24:20,119 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:24:40,174 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:25:00,226 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:25:20,291 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:25:40,354 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:26:00,408 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:26:20,465 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:26:40,523 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:27:00,579 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:27:20,637 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:27:40,691 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:28:00,744 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:28:20,795 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:28:40,845 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:29:00,897 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:29:20,957 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:29:41,011 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:30:01,062 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:30:21,112 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:30:41,166 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:31:01,218 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:31:21,269 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:31:41,331 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:32:01,389 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:32:21,445 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:32:41,498 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:33:01,561 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:33:21,623 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:33:41,675 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:34:01,727 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:34:21,784 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:34:41,835 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:35:01,887 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:35:21,951 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:35:42,003 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:36:02,059 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:36:11,936 DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-08 18:36:12,205 DEBUG https://api.telegram.org:443 "POST /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/sendMessage?chat_id=1698886007&text=%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21+%D0%B4%D0%BB%D1%8F+%D1%82%D0%B5%D0%B1%D1%8F+%D0%B5%D1%81%D1%82%D1%8C+%D0%BD%D0%BE%D0%B2%D0%BE%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%21+%D0%B5%D1%81%D0%BB%D0%B8+%D1%85%D0%BE%D1%87%D0%B5%D1%88%D1%8C+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%2C+%D0%BD%D0%B0%D0%B6%D0%BC%D0%B8+%D0%BD%D0%B0+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BE%D1%87%D0%BA%D1%83%29 HTTP/1.1" 200 767
+2021-05-08 18:36:12,207 INFO notification for ¬иктори€ None
+2021-05-08 18:36:12,215 DEBUG main info database updated
+2021-05-08 18:36:12,222 DEBUG used info database updated
+2021-05-08 18:36:12,224 DEBUG achievement info database updated
+2021-05-08 18:36:12,236 INFO all databases updated
+2021-05-08 18:36:22,113 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:36:42,168 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:37:02,223 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:37:22,274 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:37:42,326 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:38:02,379 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:38:22,430 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:38:42,484 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:39:02,541 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:39:22,595 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:39:42,648 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:40:02,700 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:40:22,753 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:40:42,806 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:41:02,857 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:41:22,916 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:41:42,971 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:42:03,025 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:42:23,085 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:42:43,144 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:43:03,197 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:43:03,205 DEBUG Resetting dropped connection: api.telegram.org
+2021-05-08 18:43:23,399 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:43:43,463 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:44:03,519 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:44:23,568 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:44:43,617 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:45:03,665 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:45:23,715 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:45:43,778 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:46:03,835 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:46:23,885 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:46:43,937 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:47:03,998 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:47:24,054 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:47:44,107 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:48:04,160 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:48:24,215 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:48:44,276 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:49:04,327 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:49:24,385 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:49:44,433 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:50:04,487 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:50:24,540 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:50:44,597 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:51:04,649 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:51:24,702 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:51:44,759 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:52:04,817 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:52:24,873 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:52:44,925 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:53:04,985 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:53:25,038 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:53:45,090 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:54:05,148 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:54:25,197 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:54:45,247 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:55:05,297 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:55:25,354 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:55:45,413 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:56:05,464 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:56:25,520 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:56:45,574 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:57:05,631 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:57:25,689 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:57:45,749 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:58:05,801 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:58:25,852 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:58:45,904 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:59:05,956 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:59:26,014 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 18:59:46,068 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:00:06,121 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:00:26,173 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:00:46,223 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:01:06,274 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:01:26,322 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:01:46,378 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:02:06,427 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:02:26,480 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:02:46,536 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:03:06,591 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:03:26,640 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:03:46,699 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:04:06,747 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:04:26,797 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:04:46,857 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:05:06,908 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:05:26,960 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:05:47,010 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:06:07,064 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:06:27,119 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:06:47,176 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:07:07,231 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:07:27,286 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:07:47,337 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:08:07,385 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:08:27,435 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:08:47,489 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:09:07,540 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:09:27,592 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:09:47,649 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:10:07,708 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:10:27,757 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:10:47,811 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:11:07,862 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:11:27,911 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:11:47,964 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:12:08,017 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:12:28,069 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:12:48,120 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:13:08,172 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:13:28,222 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:13:48,278 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:14:08,327 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:14:28,379 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:14:48,428 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:15:08,481 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:15:28,537 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:15:48,589 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:16:08,824 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:16:28,875 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:16:28,880 DEBUG Resetting dropped connection: api.telegram.org
+2021-05-08 19:16:49,124 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:17:09,191 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:17:29,257 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:17:49,323 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:18:09,393 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:18:29,459 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:18:49,530 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:19:09,605 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:19:29,680 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:19:49,746 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:20:09,825 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:20:29,890 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:20:49,954 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:21:10,019 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:21:30,085 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:21:50,148 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:22:10,214 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:22:30,279 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:22:50,349 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:23:10,419 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:23:30,494 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:23:50,560 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:24:10,626 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:24:30,690 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:24:50,757 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:25:10,822 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:25:30,894 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:25:50,962 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:26:11,031 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:26:31,096 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:26:51,161 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:27:11,226 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:27:31,292 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:27:51,359 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:28:11,425 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:28:31,491 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:28:51,555 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:29:11,620 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:29:31,686 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:29:51,751 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:30:11,814 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:30:31,882 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:30:51,945 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:31:12,013 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:31:32,077 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:31:52,144 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:32:12,210 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:32:32,274 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:32:52,338 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:33:12,401 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:33:32,465 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:33:52,530 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:34:12,594 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:34:32,657 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:34:52,721 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:35:12,783 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:35:32,843 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:35:52,904 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:36:12,242 DEBUG Resetting dropped connection: api.telegram.org
+2021-05-08 19:36:12,527 DEBUG https://api.telegram.org:443 "POST /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/sendMessage?chat_id=497421569&text=%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21+%D0%B4%D0%BB%D1%8F+%D1%82%D0%B5%D0%B1%D1%8F+%D0%B5%D1%81%D1%82%D1%8C+%D0%BD%D0%BE%D0%B2%D0%BE%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%21+%D0%B5%D1%81%D0%BB%D0%B8+%D1%85%D0%BE%D1%87%D0%B5%D1%88%D1%8C+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%2C+%D0%BD%D0%B0%D0%B6%D0%BC%D0%B8+%D0%BD%D0%B0+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BE%D1%87%D0%BA%D1%83%29 HTTP/1.1" 200 784
+2021-05-08 19:36:12,528 INFO notification for Rustam Fakhretdinov
+2021-05-08 19:36:12,610 DEBUG https://api.telegram.org:443 "POST /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/sendMessage?chat_id=873809387&text=%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21+%D0%B4%D0%BB%D1%8F+%D1%82%D0%B5%D0%B1%D1%8F+%D0%B5%D1%81%D1%82%D1%8C+%D0%BD%D0%BE%D0%B2%D0%BE%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%21+%D0%B5%D1%81%D0%BB%D0%B8+%D1%85%D0%BE%D1%87%D0%B5%D1%88%D1%8C+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%2C+%D0%BD%D0%B0%D0%B6%D0%BC%D0%B8+%D0%BD%D0%B0+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BE%D1%87%D0%BA%D1%83%29 HTTP/1.1" 200 745
+2021-05-08 19:36:12,611 INFO notification for Valeriya Bass
+2021-05-08 19:36:12,697 DEBUG https://api.telegram.org:443 "POST /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/sendMessage?chat_id=1698886007&text=%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21+%D0%B4%D0%BB%D1%8F+%D1%82%D0%B5%D0%B1%D1%8F+%D0%B5%D1%81%D1%82%D1%8C+%D0%BD%D0%BE%D0%B2%D0%BE%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%21+%D0%B5%D1%81%D0%BB%D0%B8+%D1%85%D0%BE%D1%87%D0%B5%D1%88%D1%8C+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%2C+%D0%BD%D0%B0%D0%B6%D0%BC%D0%B8+%D0%BD%D0%B0+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BE%D1%87%D0%BA%D1%83%29 HTTP/1.1" 200 767
+2021-05-08 19:36:12,697 INFO notification for ¬иктори€ None
+2021-05-08 19:36:12,707 DEBUG main info database updated
+2021-05-08 19:36:12,710 DEBUG used info database updated
+2021-05-08 19:36:12,718 DEBUG achievement info database updated
+2021-05-08 19:36:12,718 INFO all databases updated
+2021-05-08 19:36:12,965 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+2021-05-08 19:36:29,253 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 402
+2021-05-08 19:36:29,260 INFO Rustam Fakhretdinov texted слово!
+2021-05-08 19:36:49,323 DEBUG https://api.telegram.org:443 "GET /bot1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc/getUpdates?offset=115690421&timeout=20 HTTP/1.1" 200 23
