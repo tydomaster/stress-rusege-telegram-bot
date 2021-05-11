@@ -1,4 +1,8 @@
 .env
 /.idea/
 *.log
+<<<<<<< HEAD
 /dbs/
+=======
+/dbs/
+>>>>>>> c3ff7a77027df43eff6af2cbb12b8a2309e937b5
