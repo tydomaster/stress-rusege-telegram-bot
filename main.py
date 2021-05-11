@@ -296,7 +296,17 @@ def get_sum(ind):
 
 
 def get_names_msg(message):
-    return str(message.chat.first_name) + ' ' + str(message.chat.last_name)
+    name = message.chat.first_name
+    fam = message.chat.last_name
+    if str(message.chat.first_name) != "None":
+        name = name.replace(' ', '_')
+    else:
+        name = "None"
+    if str(message.chat.last_name) != "None":
+        fam = fam.replace(' ', '_')
+    else:
+        fam = "None"
+    return str(name) + ' ' + str(fam)
 
 
 def get_names_ind(ind):
@@ -314,11 +324,24 @@ def start(message):
         return
     new_used = [[0] * 2 for i in range(len(words))]
     new_ach = [0] * len(all_achievements)
-    ids.append(User(message.chat.id, 0, 0, get_time_for_notif(), message.chat.first_name, message.chat.last_name, 0, 1, 0, 0, 0, new_used, new_ach))
+
+    name = message.chat.first_name
+    fam = message.chat.last_name
+    if str(message.chat.first_name) != "None":
+        name = name.replace(' ', '_')
+    else:
+        name = "None"
+    if str(message.chat.last_name) != "None":
+        fam = fam.replace(' ', '_')
+    else:
+        fam = "None"
+
+    fam = fam.replace(' ', '_')
+    ids.append(User(message.chat.id, 0, 0, get_time_for_notif(), name, fam, 0, 1, 0, 0, 0, new_used, new_ach))
     bot.reply_to(message, f'привет! готов закидать тебя словами! советую заглянуть в настройки, а то мало ли что...', reply_markup=keyboard_main)
 
-    print(get_time() + ':: ' + 'registered @' + message.from_user.username + ' ' + get_names_msg(message) + ' with ind ' + str(get_id(message.chat.id)))
-    logging.info('registered @' + message.from_user.username + ' ' + get_names_msg(message) + ' with ind ' + str(get_id(message.chat.id)))
+    print(get_time() + ':: ' + 'registered @' + str(message.from_user.username) + ' ' + get_names_msg(message) + ' with ind ' + str(get_id(message.chat.id)))
+    logging.info('registered @' + str(message.from_user.username) + ' ' + get_names_msg(message) + ' with ind ' + str(get_id(message.chat.id)))
     upd_b()
 
 @bot.message_handler(content_types=["text"])  # ответ на любой текст
@@ -368,19 +391,25 @@ def any_msg(message):
         bot.send_message(message.chat.id, 'выбери, какой топ хочешь посмотреть', reply_markup=keyboard_choose_top)
     elif message.text.lower() == 'топ по рейтингу':
         ids.sort(key=comparator_rating, reverse=True)
-        s = "*текущий топ по рейтингу:*\n"
+        s = "*текущий топ-30 по рейтингу:*\n"
         place = 0
-        for i in range(len(ids)):
+        for i in range(30):
             zvanie = ranks[min(len(ranks) - 1, place)]
             if ids[i].top == 0:
                 continue
-            s += str(place + 1) + "\) "
+            s += str(place + 1) + ") "
             if str(ids[i].first_name) != "None":
                 s += str(ids[i].first_name) + " "
             if str(ids[i].last_name) != "None":
                 s += str(ids[i].last_name) + " "
             s += "\| " + str(ids[i].rating) + " \| " + zvanie + "\n"
             place += 1
+        s = s.replace('_', '\_')
+        s = s.replace(')', '\)')
+        s = s.replace('(', '\(')
+        s = s.replace('-', '\-')
+        s = s.replace('+', '\+')
+        s = s.replace('%', '\%')
         bot.send_message(message.chat.id, s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' top_rating')
@@ -392,17 +421,23 @@ def any_msg(message):
         for i in range(len(ids)):
             if ids[i].top == 0:
                 continue
-            s += str(place + 1) + "\) "
+            s += str(place + 1) + ") "
             if str(ids[i].first_name) != "None":
                 s += str(ids[i].first_name) + " "
             if str(ids[i].last_name) != "None":
                 s += str(ids[i].last_name) + " "
             if ids[i].max_streak > 0:
-                max_str = "\+ " + str(ids[i].max_streak)
+                max_str = "+ " + str(ids[i].max_streak)
             else:
                 max_str = str(ids[i].max_streak)
             s += "\| " + max_str + "\n"
             place += 1
+        s = s.replace('_', '\_')
+        s = s.replace(')', '\)')
+        s = s.replace('(', '\(')
+        s = s.replace('-', '\-')
+        s = s.replace('+', '\+')
+        s = s.replace('%', '\%')
         bot.send_message(message.chat.id, s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' top_streak')
@@ -421,10 +456,13 @@ def any_msg(message):
                 s += str(ids[i].last_name) + " "
             s += str(round(ids[i].correct / (ids[i].correct + ids[i].wrong) * 100.0, 2)) + "% (" + str(ids[i].correct) + " правильных из " + str(ids[i].wrong + ids[i].correct) + ")\n"
             place += 1
-        s = s.replace('.', '\.')
+        s = s.replace('_', '\_')
         s = s.replace(')', '\)')
         s = s.replace('(', '\(')
+        s = s.replace('-', '\-')
+        s = s.replace('+', '\+')
         s = s.replace('%', '\%')
+        s = s.replace('.', '\.')
         bot.send_message(message.chat.id, s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' top_percent')
@@ -449,8 +487,19 @@ def any_msg(message):
         ind = get_id(message.chat.id)
         log_str = get_names_ind(ind) + ' changed name to '
         bot.send_message(message.chat.id, "изменил твое имя в соответствии с твоим телеграм-аккаунтом!")
-        ids[ind].first_name = message.chat.first_name
-        ids[ind].last_name = message.chat.last_name
+
+        name = message.chat.first_name
+        fam = message.chat.last_name
+        if str(message.chat.first_name) != "None":
+            name = name.replace(' ', '_')
+        else:
+            name = "None"
+        if str(message.chat.last_name) != "None":
+            fam = fam.replace(' ', '_')
+        else:
+            fam = "None"
+        ids[ind].first_name = name
+        ids[ind].last_name = fam
 
         log_str += get_names_ind(ind)
 
