@@ -45,7 +45,7 @@ python welcome.py
 Его нужно получить у Telegram-бота @BotFather.  
 В файле .env пропишите полученный токен после BOT_TOKEN= без кавычек и чего-либо еще. Должно получиться примерно так:  
 ```
-BOT_TOKEN=1827743807:AAHlesczDlh-9xrnsS6CpaybzYQC80kmL20
+BOT_TOKEN=1827743807:AAHlesczDlh-9xrnsS6CpaybzYQC80kmL20 # пример токена
 ```
 Дело за малым! Прописываем в командную строку
 ```
