@@ -1,15 +1,14 @@
-import operator
+import os
 import telebot
+import logging
 from telebot import types
 from random import randint
 from time import sleep
 from functools import wraps
 from datetime import datetime
-import logging
-import sys
-import codecs
+from dotenv import load_dotenv
+load_dotenv(encoding='utf8')
 
-# sys.stdout.reconfigure(encoding='utf-8')
 
 # logs
 
@@ -56,10 +55,13 @@ class User:
 # used[i][0] = сколько раз задавался вопрос со словом i за сессию, used[i][1] = 0/1 был ли правильный ответ на вопрос со словом i
 
 
+global timer
 words = []
 ids = []
 link = {}
-global timer
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+
+
 all_achievements = ['разблокировать все слова',
                     '100 правильных слов',
                     '500 правильных слов',
@@ -77,7 +79,6 @@ ranks = ["победитель \"Русского медвежонка\"",
          "победитель региона по русскому языку", "призер региона по русскому языку", "участник региона по русскому языку",
          "победитель муниципа по русскому языку", "призер муниципа по русскому языку", "участник муниципа по русскому языку",
          "победитель школьного этапа по русскому языку", "призер школьного этапа по русскому языку", "участник школьного этапа по русскому языку"]
-
 
 #клавиатуры_start
 
@@ -176,15 +177,15 @@ def start_prog():
         ids_debug += str(i) + ") " + str(ids[i].id) + ' ' + ids[i].first_name + ' ' + ids[i].last_name + "\n"
     logging.debug(ids_debug)
 
+
+bot = telebot.TeleBot(BOT_TOKEN)
+
 words_fill()
 print(get_time() + ':: ' + 'words loaded, count= ' + str(len(words)))
 logging.info('words loaded, count= ' + str(len(words)))
 start_prog()
 print(get_time() + ':: ' + 'users loaded, count= ' + str(len(ids)))
 logging.info('users loaded, count= ' + str(len(ids)))
-
-
-bot = telebot.TeleBot('1639467970:AAEXXyaLvwq1LIe9rOMjo0AzyhMlVKl-3Xc')
 
 
 def upd_b():
