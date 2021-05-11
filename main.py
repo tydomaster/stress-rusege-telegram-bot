@@ -10,13 +10,26 @@ from dotenv import load_dotenv
 load_dotenv(encoding='utf8')
 
 
+global timer
+words = []
+ids = []
+link = {}
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+MAIN_INFO = os.getenv('MAIN_INFO')
+MAIN_INFO_BACKUP = os.getenv('MAIN_INFO_BACKUP')
+USED_INFO = os.getenv('USED_INFO')
+USED_INFO_BACKUP = os.getenv('USED_INFO_BACKUP')
+ACHIEVEMENTS_INFO = os.getenv('ACHIEVEMENTS_INFO')
+ACHIEVEMENTS_INFO_BACKUP = os.getenv('ACHIEVEMENTS_INFO_BACKUP')
+LOGS_PATH = os.getenv('LOGS_PATH')
+
 # logs
 
 nowtimestr = str(datetime.now())
 nowtimestr = nowtimestr.replace(' ', '-')
 nowtimestr = nowtimestr.replace('.', '-')
 nowtimestr = nowtimestr.replace(':', '-')
-path = r"C:\Users\tydo_\a\rus_ege_bot\logs\bot-" + nowtimestr + ".log"
+path = LOGS_PATH + "bot-" + nowtimestr + ".log"
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s", filename=path, filemode="w", encoding='utf-8')
 
 #
@@ -55,11 +68,6 @@ class User:
 # used[i][0] = сколько раз задавался вопрос со словом i за сессию, used[i][1] = 0/1 был ли правильный ответ на вопрос со словом i
 
 
-global timer
-words = []
-ids = []
-link = {}
-BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 
 all_achievements = ['разблокировать все слова',
@@ -132,9 +140,9 @@ def words_fill():
 
 
 def start_prog():
-    text_main = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r", encoding='utf8')
-    text_used = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info.txt", "r")
-    text_achievements = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info.txt", "r")
+    text_main = open(MAIN_INFO, "r", encoding='utf8')
+    text_used = open(USED_INFO, "r")
+    text_achievements = open(ACHIEVEMENTS_INFO, "r")
     users = 0
     for _ in text_main:
         users += 1
@@ -155,7 +163,7 @@ def start_prog():
             achievements_local[ind][i] = int(a[i + 1])
         ind += 1
     ind = 0
-    text_main = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r", encoding='utf8')
+    text_main = open(MAIN_INFO, "r", encoding='utf8')
     for line in text_main:
         a = line.split()
         ids.append(User(int(a[0]),
@@ -181,7 +189,7 @@ def start_prog():
 bot = telebot.TeleBot(BOT_TOKEN)
 
 words_fill()
-print(get_time() + ':: ' + 'words loaded, count= ' + str(len(words)))
+print(get_time() + ':: words loaded, count= ' + str(len(words)))
 logging.info('words loaded, count= ' + str(len(words)))
 start_prog()
 print(get_time() + ':: ' + 'users loaded, count= ' + str(len(ids)))
@@ -189,14 +197,14 @@ logging.info('users loaded, count= ' + str(len(ids)))
 
 
 def upd_b():
-    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "r", encoding='utf8')
-    file2 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info_backup.txt", "w", encoding='utf8')
+    file1 = open(MAIN_INFO, "r", encoding='utf8')
+    file2 = open(MAIN_INFO_BACKUP, "w", encoding='utf8')
     file2.truncate(0)
     for line in file1:
         file2.write(line)
     file1.close()
     file2.close()
-    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_main_info.txt", "w", encoding='utf8')
+    file1 = open(MAIN_INFO, "w", encoding='utf8')
     file1.truncate(0)
     for i in range(len(ids)):
         file1.write(str(ids[i].id) + ' '
@@ -214,14 +222,14 @@ def upd_b():
 
     logging.debug('main info database updated')
 
-    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info.txt", "r")
-    file2 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info_backup.txt", "w")
+    file1 = open(USED_INFO, "r")
+    file2 = open(USED_INFO_BACKUP, "w")
     file2.truncate(0)
     for line in file1:
         file2.write(line)
     file1.close()
     file2.close()
-    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_used_info.txt", "w")
+    file1 = open(USED_INFO, "w")
     file1.truncate(0)
     for i in range(len(ids)):
         used_write = ""
@@ -232,14 +240,14 @@ def upd_b():
 
     logging.debug('used info database updated')
 
-    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info.txt", "r")
-    file2 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info_backup.txt", "w")
+    file1 = open(ACHIEVEMENTS_INFO, "r")
+    file2 = open(ACHIEVEMENTS_INFO_BACKUP, "w")
     file2.truncate(0)
     for line in file1:
         file2.write(line)
     file1.close()
     file2.close()
-    file1 = open(r"C:\Users\tydo_\a\rus_ege_bot\dbs\db_achievements_info.txt", "w")
+    file1 = open(ACHIEVEMENTS_INFO, "w")
     file1.truncate(0)
     for i in range(len(ids)):
         ach_write = ""
