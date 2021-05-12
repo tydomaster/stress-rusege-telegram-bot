@@ -314,6 +314,36 @@ def get_names_ind(ind):
     return str(ids[ind].first_name) + ' ' + str(ids[ind].last_name)
 
 
+def upd_chatid(message):
+    for i in range(len(ids)):
+        if message.chat.first_name == ids[i].first_name and message.chat.id != ids[i].id:
+            ids[i].id = message.chat.id
+            print(get_names_msg(message), 'UPDATED CHAT ID')
+            upd_b()
+            break
+
+
+def replace_mark(s):
+    s = s.replace('_', '\_')
+    s = s.replace(')', '\)')
+    s = s.replace('(', '\(')
+    s = s.replace('-', '\-')
+    s = s.replace('+', '\+')
+    s = s.replace('%', '\%')
+    s = s.replace('.', '\.')
+    s = s.replace('[', '\[')
+    s = s.replace(']', '\]')
+    s = s.replace('-', '\-')
+    s = s.replace('`', '\`')
+    s = s.replace('{', '\{')
+    s = s.replace('}', '\}')
+    s = s.replace('https:', 'imgay')
+    s = s.replace('.com', 'imgay')
+    s = s.replace('.ru', 'imgay')
+    s = s.replace('.net', 'imgay')
+    return s
+
+
 @bot.message_handler(commands=['start'])  # ответ на команду /start
 def start(message):
     print(message.chat.username)
@@ -345,8 +375,10 @@ def start(message):
     logging.info('registered @' + str(message.from_user.username) + ' ' + get_names_msg(message) + ' with ind ' + str(get_id(message.chat.id)))
     upd_b()
 
+
 @bot.message_handler(content_types=["text"])  # ответ на любой текст
 def any_msg(message):
+    upd_chatid(message)
     logging.info(get_names_msg(message) + ' texted ' + message.text)
     print(get_time() + ':: ' + get_names_msg(message) + ' texted ' + message.text)
 
@@ -392,9 +424,10 @@ def any_msg(message):
         bot.send_message(message.chat.id, 'выбери, какой топ хочешь посмотреть', reply_markup=keyboard_choose_top)
     elif message.text.lower() == 'топ по рейтингу':
         ids.sort(key=comparator_rating, reverse=True)
-        s = "*текущий топ-30 по рейтингу:*\n"
+        t = "*текущий топ\-10 по рейтингу:*\n"
+        s = ""
         place = 0
-        for i in range(30):
+        for i in range(10):
             zvanie = ranks[min(len(ranks) - 1, place)]
             if ids[i].top == 0:
                 continue
@@ -405,21 +438,17 @@ def any_msg(message):
                 s += str(ids[i].last_name) + " "
             s += "\| " + str(ids[i].rating) + " \| " + zvanie + "\n"
             place += 1
-        s = s.replace('_', '\_')
-        s = s.replace(')', '\)')
-        s = s.replace('(', '\(')
-        s = s.replace('-', '\-')
-        s = s.replace('+', '\+')
-        s = s.replace('%', '\%')
-        bot.send_message(message.chat.id, s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
+        s = replace_mark(s)
+        bot.send_message(message.chat.id, t + s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' top_rating')
         logging.info('gave ' + get_names_msg(message) + ' top_rating')
     elif message.text.lower() == 'топ по стрику':
         ids.sort(key=comparator_streak, reverse=True)
-        s = "*текущий топ по стрику:*\n"
+        t = "*текущий топ\-10 по стрику:*\n"
+        s = ""
         place = 0
-        for i in range(len(ids)):
+        for i in range(10):
             if ids[i].top == 0:
                 continue
             s += str(place + 1) + ") "
@@ -433,19 +462,15 @@ def any_msg(message):
                 max_str = str(ids[i].max_streak)
             s += "\| " + max_str + "\n"
             place += 1
-        s = s.replace('_', '\_')
-        s = s.replace(')', '\)')
-        s = s.replace('(', '\(')
-        s = s.replace('-', '\-')
-        s = s.replace('+', '\+')
-        s = s.replace('%', '\%')
-        bot.send_message(message.chat.id, s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
+        s = replace_mark(s)
+        bot.send_message(message.chat.id, t + s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' top_streak')
         logging.info('gave ' + get_names_msg(message) + ' top_streak')
     elif message.text.lower() == 'топ по % правильных':
         ids.sort(key=comparator_percent, reverse=True)
-        s = "*текущий топ по % правильных ответов* _(пользователи с количеством ответов не меньше 100)_:\n"
+        t = "*текущий топ по % правильных ответов* \(пользователи с количеством ответов не меньше 100\):\n"
+        s = ""
         place = 0
         for i in range(len(ids)):
             if ids[i].top == 0 or ids[i].correct + ids[i].wrong < 100:
@@ -457,14 +482,8 @@ def any_msg(message):
                 s += str(ids[i].last_name) + " "
             s += str(round(ids[i].correct / (ids[i].correct + ids[i].wrong) * 100.0, 2)) + "% (" + str(ids[i].correct) + " правильных из " + str(ids[i].wrong + ids[i].correct) + ")\n"
             place += 1
-        s = s.replace('_', '\_')
-        s = s.replace(')', '\)')
-        s = s.replace('(', '\(')
-        s = s.replace('-', '\-')
-        s = s.replace('+', '\+')
-        s = s.replace('%', '\%')
-        s = s.replace('.', '\.')
-        bot.send_message(message.chat.id, s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
+        s = replace_mark(s)
+        bot.send_message(message.chat.id, t + s, reply_markup=keyboard_choose_top, parse_mode='MarkdownV2')
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' top_percent')
         logging.info('gave ' + get_names_msg(message) + ' top_percent')
@@ -493,10 +512,12 @@ def any_msg(message):
         fam = message.chat.last_name
         if str(message.chat.first_name) != "None":
             name = name.replace(' ', '_')
+            name = name.replace('https:', 'im gay')
         else:
             name = "None"
         if str(message.chat.last_name) != "None":
             fam = fam.replace(' ', '_')
+            name = name.replace('https:', 'im gay')
         else:
             fam = "None"
         ids[ind].first_name = name
@@ -508,7 +529,7 @@ def any_msg(message):
         logging.info(log_str)
         upd_b()
     elif message.text.lower() == 'главное меню':
-        bot.send_message(message.chat.id, "скорее всего, выйти в главное меню можно без сообщения, но я не смог нагуглить то, как это сделать, поэтому могу просто сказать, что в данный момент на " + str(randint(0, 100)) + "% ты лох))))))", reply_markup=keyboard_main)
+        bot.send_message(message.chat.id, "телепортируемся в главное меню!", reply_markup=keyboard_main)
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' main_menu')
         logging.info('gave ' + get_names_msg(message) + ' main_menu')
@@ -737,11 +758,12 @@ def multi_threading(func):  # Декоратор для запуска функ�
 @multi_threading
 def test():  # предложение ответить на вопрос каждые N единиц времени
     while 1:
-        sleep(18000)
         if datetime.now().hour >= 23 or datetime.now().hour <= 9:
             continue
         nowtime = get_time_for_notif()
+        sleep(14400)
         for i in range(len(ids)):
+            print(nowtime - int(ids[i].last_answer))
             if nowtime - int(ids[i].last_answer) >= 5 and ids[i].skipped < 3:
                 ids[i].skipped += 1
                 bot.send_message(chat_id=ids[i].id,
