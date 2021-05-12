@@ -22,6 +22,7 @@ USED_INFO_BACKUP = os.getenv('USED_INFO_BACKUP')
 ACHIEVEMENTS_INFO = os.getenv('ACHIEVEMENTS_INFO')
 ACHIEVEMENTS_INFO_BACKUP = os.getenv('ACHIEVEMENTS_INFO_BACKUP')
 LOGS_PATH = os.getenv('LOGS_PATH')
+bot = telebot.TeleBot(BOT_TOKEN)
 
 # logs
 
@@ -33,6 +34,7 @@ path = LOGS_PATH + "bot-" + nowtimestr + ".log"
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s", filename=path, filemode="w", encoding='utf-8')
 
 #
+
 
 def get_time():
     date = datetime.now()
@@ -186,14 +188,13 @@ def start_prog():
     logging.debug(ids_debug)
 
 
-bot = telebot.TeleBot(BOT_TOKEN)
-
-words_fill()
-print(get_time() + ':: words loaded, count= ' + str(len(words)))
-logging.info('words loaded, count= ' + str(len(words)))
-start_prog()
-print(get_time() + ':: ' + 'users loaded, count= ' + str(len(ids)))
-logging.info('users loaded, count= ' + str(len(ids)))
+def setup():
+    words_fill()
+    print(get_time() + ':: words loaded, count= ' + str(len(words)))
+    logging.info('words loaded, count= ' + str(len(words)))
+    start_prog()
+    print(get_time() + ':: ' + 'users loaded, count= ' + str(len(ids)))
+    logging.info('users loaded, count= ' + str(len(ids)))
 
 
 def upd_b():
@@ -764,6 +765,6 @@ def test():  # предложение ответить на вопрос каж�
                 logging.info('LAST notification for ' + get_names_ind(i))
         upd_b()
 
-
+setup()
 test()
 bot.polling(none_stop=True, interval=0)
