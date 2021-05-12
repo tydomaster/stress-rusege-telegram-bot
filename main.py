@@ -337,10 +337,10 @@ def replace_mark(s):
     s = s.replace('`', '\`')
     s = s.replace('{', '\{')
     s = s.replace('}', '\}')
-    s = s.replace('https:', 'imgay')
-    s = s.replace('.com', 'imgay')
-    s = s.replace('.ru', 'imgay')
-    s = s.replace('.net', 'imgay')
+    s = s.replace('https:', '\[banned\]')
+    s = s.replace('.com', '\[banned\]')
+    s = s.replace('.ru', '\[banned\]')
+    s = s.replace('.net', '\[banned\]')
     return s
 
 
@@ -619,6 +619,7 @@ def callback_inline(call):
             ids[ind].streak += 1
         ids[ind].max_streak = max(ids[ind].max_streak, ids[ind].streak)
 
+        print(get_time() + ':: ' + get_names_msg(call.message) + ' answered ' + call.data[4:].lower() + ' correct +' + str(r) + ' rating')
         logging.info(get_names_msg(call.message) + ' answered ' + link[call.data[4:].lower()].lower() + ' correct, +' + str(r) + ' rating')
         # achievements
         if get_sum(ind) == len(words) and ids[ind].achievements[0] == 0:
@@ -758,30 +759,38 @@ def multi_threading(func):  # Декоратор для запуска функ�
 @multi_threading
 def test():  # предложение ответить на вопрос каждые N единиц времени
     while 1:
+        sleep(14400)
+        nowtime = get_time_for_notif()
         if datetime.now().hour >= 23 or datetime.now().hour <= 9:
             continue
-        nowtime = get_time_for_notif()
-        sleep(14400)
         for i in range(len(ids)):
-            print(nowtime - int(ids[i].last_answer))
             if nowtime - int(ids[i].last_answer) >= 5 and ids[i].skipped < 3:
                 ids[i].skipped += 1
-                bot.send_message(chat_id=ids[i].id,
-                                 text="привет! для тебя есть новое задание! если хочешь получить, нажми на кнопочку)")
+                try:
+                    bot.send_message(chat_id=ids[i].id,
+                                     text="привет! для тебя есть новое задание! если хочешь получить, нажми на кнопочку)")
+                except telebot.apihelper.ApiException:
+                    logging.error('cant send notification to ' + get_names_ind(i))
 
                 print(get_time() + ':: ' + 'notification for ' + get_names_ind(i))
                 logging.info('notification for ' + get_names_ind(i))
             elif ids[i].skipped >= 3 and ids[i].skipped < 4 and nowtime - int(ids[i].last_answer) >= 10:
                 ids[i].skipped += 1
-                bot.send_message(chat_id=ids[i].id,
+                try:
+                    bot.send_message(chat_id=ids[i].id,
                                  text="привет! давно тебя не было в уличных гонках! если хочешь получить вопросик, нажми на кнопочку)")
+                except telebot.apihelper.ApiException:
+                    logging.error('cant send notification to ' + get_names_ind(i))
 
                 print(get_time() + ':: ' + 'notification for ' + get_names_ind(i))
                 logging.info('notification for ' + get_names_ind(i))
             elif ids[i].skipped >= 4 and ids[i].skipped < 5 and nowtime - int(ids[i].last_answer) >= 10:
                 ids[i].skipped += 1
-                bot.send_message(chat_id=ids[i].id,
+                try:
+                    bot.send_message(chat_id=ids[i].id,
                                  text="привет! последний раз предлагаю тебе вспомнить про ударения на егэ!")
+                except telebot.apihelper.ApiException:
+                    logging.error('cant send last notification to ' + get_names_ind(i))
 
                 print(get_time() + ':: ' + 'LAST notification for ' + get_names_ind(i))
                 logging.info('LAST notification for ' + get_names_ind(i))
