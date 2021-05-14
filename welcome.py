@@ -40,7 +40,7 @@ if path.exists(pachb) == 0:
     open(pachb, "w", encoding="utf8").close()
 if path.exists(paba) == 0:
     open(paba, "w", encoding="utf8").close()
-    if path.exists(pabab) == 0:
+if path.exists(pabab) == 0:
     open(pabab, "w", encoding="utf8").close()
 if path.exists(".env") == 0:
     f = open(p1 + ".env", "w", encoding="utf8")
