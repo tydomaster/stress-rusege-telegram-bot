@@ -13,7 +13,6 @@ load_dotenv(encoding='utf8')
 global timer
 words = []
 ids = []
-banned_ids = []
 link = {}
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 MAIN_INFO = os.getenv('MAIN_INFO')
@@ -54,7 +53,7 @@ def get_time_for_notif():
 
 
 class User:
-    def __init__(self, id, correct, wrong, last_answer, first_name, last_name, skipped, top, rating, streak, max_streak, used, achievements):
+    def __init__(self, id, correct, wrong, last_answer, first_name, last_name, skipped, top, rating, streak, max_streak, notify, banned, used, achievements):
         self.id = id
         self.correct = correct
         self.wrong = wrong
@@ -68,9 +67,8 @@ class User:
         self.achievements = achievements
         self.streak = streak
         self.max_streak = max_streak
-
-
-# used[i][0] = сколько раз задавался вопрос со словом i за сессию, used[i][1] = 0/1 был ли правильный ответ на вопрос со словом i
+        self.banned = banned
+        self.notify = notify
 
 
 all_achievements = ['разблокировать все слова',
@@ -197,15 +195,11 @@ def start_prog():
                         int(a[8]),
                         int(a[9]),
                         int(a[10]),
+                        int(a[11]),
+                        int(a[12]),
                         used_local[ind], achievements_local[ind]))
         ind += 1
     text_main.close()
-
-    text_banned = open(BANNED_USERS, "r", encoding='utf8')
-    for line in text_banned:
-        a = int(line)
-        banned_ids.append(a)
-    text_banned.close()
 
     ids_debug = "users:\n"
     for i in range(len(ids)):
@@ -243,7 +237,9 @@ def upd_b():
                     + str(ids[i].top) + ' '
                     + str(ids[i].rating) + ' '
                     + str(ids[i].streak) + ' '
-                    + str(ids[i].max_streak) + '\n')
+                    + str(ids[i].max_streak) + ' '
+                    + str(ids[i].notify) + ' '
+                    + str(ids[i].banned) + '\n')
     file1.close()
 
     logging.debug('main info database updated')
@@ -282,23 +278,6 @@ def upd_b():
         file1.write(str(ids[i].id) + ' ' + ach_write + '\n')
     file1.close()
     logging.debug('achievement info database updated')
-
-    file1 = open(BANNED_USERS, "r")
-    file2 = open(BANNED_USERS_BACKUP, "w")
-    file2.truncate(0)
-    for line in file1:
-        file2.write(line)
-    file1.close()
-    file2.close()
-    file1 = open(BANNED_USERS, "w")
-    file1.truncate(0)
-    ach_write = ""
-    for j in range(len(banned_ids)):
-        ach_write += str(banned_ids[j]) + '\n'
-    file1.write(ach_write)
-    file1.close()
-
-    logging.debug('banned_users info database updated')
     print(get_time() + ':: ' + 'all databases updated')
     logging.info('all databases updated')
 
@@ -403,7 +382,7 @@ def lose_progress(id):
 
 
 def is_banned(message):
-    if message.chat.id in banned_ids:
+    if ids[get_id(message.chat.id)].banned == 1:
         try:
             bot.send_message(message.chat.id, 'сори, но ты забанен :( \nпо вопросам разбана - @Rustam_Fakhretdinov')
             logging.info(get_names_msg(message) + ' is banned, got message from bot about ban')
@@ -853,6 +832,8 @@ def test():  # предложение ответить на вопрос каж�
         if datetime.now().hour >= 23 or datetime.now().hour <= 9:
             continue
         for i in range(len(ids)):
+            if ids[i].notify == 0:
+                continue
             if nowtime - int(ids[i].last_answer) >= 3 and ids[i].skipped < 3:
                 ids[i].skipped += 1
                 try:
