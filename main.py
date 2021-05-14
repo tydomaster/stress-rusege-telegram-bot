@@ -13,6 +13,7 @@ load_dotenv(encoding='utf8')
 global timer
 words = []
 ids = []
+banned_ids = []
 link = {}
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 MAIN_INFO = os.getenv('MAIN_INFO')
@@ -22,6 +23,8 @@ USED_INFO_BACKUP = os.getenv('USED_INFO_BACKUP')
 ACHIEVEMENTS_INFO = os.getenv('ACHIEVEMENTS_INFO')
 ACHIEVEMENTS_INFO_BACKUP = os.getenv('ACHIEVEMENTS_INFO_BACKUP')
 LOGS_PATH = os.getenv('LOGS_PATH')
+BANNED_USERS = os.getenv('BANNED_USERS')
+BANNED_USERS_BACKUP = os.getenv('BANNED_USERS_BACKUP')
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # logs
@@ -70,8 +73,6 @@ class User:
 # used[i][0] = сколько раз задавался вопрос со словом i за сессию, used[i][1] = 0/1 был ли правильный ответ на вопрос со словом i
 
 
-
-
 all_achievements = ['разблокировать все слова',
                     '100 правильных слов',
                     '500 правильных слов',
@@ -85,10 +86,18 @@ all_achievements = ['разблокировать все слова',
                     'стрик 250',
                     'a big secret']
 ranks = ["победитель \"Русского медвежонка\"",
-         "победитель ВСоШ по русскому языку", "призер ВСоШ по русскому языку", "участник ВСоШ по русскому языку",
-         "победитель региона по русскому языку", "призер региона по русскому языку", "участник региона по русскому языку",
-         "победитель муниципа по русскому языку", "призер муниципа по русскому языку", "участник муниципа по русскому языку",
-         "победитель школьного этапа по русскому языку", "призер школьного этапа по русскому языку", "участник школьного этапа по русскому языку"]
+         "победитель ВСоШ по русскому языку",
+         "призер ВСоШ по русскому языку",
+         "участник ВСоШ по русскому языку",
+         "победитель региона по русскому языку",
+         "призер региона по русскому языку",
+         "участник региона по русскому языку",
+         "победитель муниципа по русскому языку",
+         "призер муниципа по русскому языку",
+         "участник муниципа по русскому языку",
+         "победитель школьного этапа по русскому языку",
+         "призер школьного этапа по русскому языку",
+         "участник школьного этапа по русскому языку"]
 
 #клавиатуры_start
 
@@ -96,7 +105,7 @@ keyboard_main = types.ReplyKeyboardMarkup(True, False)
 keyboard_main.row('слово!', 'статы', 'топ')
 keyboard_main.add('достижения', 'помощь', 'настройки')
 keyboard_settings = types.ReplyKeyboardMarkup(True, False)
-keyboard_settings.row('настройки отображения в топе', 'главное меню')
+keyboard_settings.row('настройки отображения в топе', 'сбросить прогресс', 'главное меню')
 keyboard_choose_top = types.ReplyKeyboardMarkup(True, False)
 keyboard_choose_top.row('топ по рейтингу', 'топ по стрику')
 keyboard_choose_top.add('топ по % правильных', 'главное меню')
@@ -112,6 +121,11 @@ callback_button_top1 = types.InlineKeyboardButton(text="да", callback_data="to
 callback_button_top2 = types.InlineKeyboardButton(text="нет", callback_data="top_no")
 callback_buttons_top.add(callback_button_top1)
 callback_buttons_top.add(callback_button_top2)
+
+callback_buttons_loseprogress = types.InlineKeyboardMarkup()
+callback_buttons_loseprogress1 = types.InlineKeyboardButton(text="да", callback_data="loseprog_yes")
+callback_buttons_loseprogress2 = types.InlineKeyboardButton(text="нет", callback_data="loseprog_no")
+callback_buttons_loseprogress.add(callback_buttons_loseprogress1, callback_buttons_loseprogress2)
 
 #клавиатуры_end
 
@@ -149,6 +163,7 @@ def start_prog():
     for _ in text_main:
         users += 1
     text_main.close()
+
     used_local = [[[0] * 2 for _ in range(len(words))] for i in range(users)]
     achievements_local = [[0] * len(all_achievements) for _ in range(users)]
     ind = 0
@@ -165,6 +180,9 @@ def start_prog():
             achievements_local[ind][i] = int(a[i + 1])
         ind += 1
     ind = 0
+    text_used.close()
+    text_achievements.close()
+
     text_main = open(MAIN_INFO, "r", encoding='utf8')
     for line in text_main:
         a = line.split()
@@ -181,6 +199,13 @@ def start_prog():
                         int(a[10]),
                         used_local[ind], achievements_local[ind]))
         ind += 1
+    text_main.close()
+
+    text_banned = open(BANNED_USERS, "r", encoding='utf8')
+    for line in text_banned:
+        a = int(line)
+        banned_ids.append(a)
+    text_banned.close()
 
     ids_debug = "users:\n"
     for i in range(len(ids)):
@@ -256,8 +281,24 @@ def upd_b():
             ach_write += str(ids[i].achievements[j]) + ' '
         file1.write(str(ids[i].id) + ' ' + ach_write + '\n')
     file1.close()
-
     logging.debug('achievement info database updated')
+
+    file1 = open(BANNED_USERS, "r")
+    file2 = open(BANNED_USERS_BACKUP, "w")
+    file2.truncate(0)
+    for line in file1:
+        file2.write(line)
+    file1.close()
+    file2.close()
+    file1 = open(BANNED_USERS, "w")
+    file1.truncate(0)
+    ach_write = ""
+    for j in range(len(banned_ids)):
+        ach_write += str(banned_ids[j]) + '\n'
+    file1.write(ach_write)
+    file1.close()
+
+    logging.debug('banned_users info database updated')
     print(get_time() + ':: ' + 'all databases updated')
     logging.info('all databases updated')
 
@@ -344,6 +385,36 @@ def replace_mark(s):
     return s
 
 
+def lose_progress(id):
+    for i in range(len(ids)):
+        if ids[i].id == id:
+            new_used = [[0] * 2 for i in range(len(words))]
+            new_ach = [0] * len(all_achievements)
+            ids[i].correct = 0
+            ids[i].wrong = 0
+            ids[i].skipped = 0
+            ids[i].top = 1
+            ids[i].rating = 0
+            ids[i].used = new_used
+            ids[i].achievements = new_ach
+            ids[i].streak = 0
+            ids[i].max_streak = 0
+            break
+
+
+def is_banned(message):
+    if message.chat.id in banned_ids:
+        try:
+            bot.send_message(message.chat.id, 'сори, но ты забанен :( \nпо вопросам разбана - @Rustam_Fakhretdinov')
+            logging.info(get_names_msg(message) + ' is banned, got message from bot about ban')
+            print(get_time() + ':: ' + get_names_msg(message) + ' is banned, got message from bot about ban')
+        except telebot.apihelper.ApiException:
+            logging.error(get_names_msg(message) + ' is banned, cant send message to him ' + message.text)
+            print(get_time() + ':: ' + get_names_msg(message) + ' is banned, cant send message to him')
+        return 1
+    return 0
+
+
 @bot.message_handler(commands=['start'])  # ответ на команду /start
 def start(message):
     print(message.chat.username)
@@ -381,6 +452,9 @@ def any_msg(message):
     upd_chatid(message)
     logging.info(get_names_msg(message) + ' texted ' + message.text)
     print(get_time() + ':: ' + get_names_msg(message) + ' texted ' + message.text)
+
+    if is_banned(message) == 1:
+        return
 
     ind = get_id(message.chat.id)
     if message.text.lower() == 'статы':
@@ -492,6 +566,11 @@ def any_msg(message):
 
         print(get_time() + ':: ' + 'gave ' + get_names_msg(message) + ' settings_main')
         logging.info('gave ' + get_names_msg(message) + ' settings_main')
+    elif message.text.lower() == 'сбросить прогресс':
+        try:
+            bot.send_message(message.chat.id, "ты ТОЧНО хочешь сбросить прогресс?\nВСЯ СТАТИСТИКА, ВСЕ ДОСТИЖЕНИЯ пропадут НАВСЕГДА и их НЕЛЬЗЯ будет вернуть", reply_markup=callback_buttons_loseprogress)
+        except telebot.apihelper.ApiException:
+            logging.error(message.chat.id + ' cant lose progress')
     elif message.text.lower() == 'настройки отображения в топе':
         bot.send_message(message.chat.id, "телепортирую в настройки отображения в топе...",
                          reply_markup=keyboard_top_settings)
@@ -512,12 +591,10 @@ def any_msg(message):
         fam = message.chat.last_name
         if str(message.chat.first_name) != "None":
             name = name.replace(' ', '_')
-            name = name.replace('https:', 'im gay')
         else:
             name = "None"
         if str(message.chat.last_name) != "None":
             fam = fam.replace(' ', '_')
-            name = name.replace('https:', 'im gay')
         else:
             fam = "None"
         ids[ind].first_name = name
@@ -741,6 +818,18 @@ def callback_inline(call):
         logging.info(get_names_msg(call.message) + ' now NOT available in top')
         ids[ind].top = 0
         upd_b()
+    elif len(call.data) >= 12 and call.data == "loseprog_yes":
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                              text="новая жизнь! новая жизнь!")
+        lose_progress(call.message.chat.id)
+        print(get_time() + ':: ' + get_names_msg(call.message) + ' lost all progress. hope he is ok...')
+        logging.info(get_names_msg(call.message) + ' lost all progress. hope he is ok...')
+        upd_b()
+    elif len(call.data) >= 11 and call.data == "loseprog_no":
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                              text="никогда не сдавайся!")
+        print(get_time() + ':: ' + get_names_msg(call.message) + ' made right decision')
+        logging.info(get_names_msg(call.message) + ' made right decision')
 
 
 def multi_threading(func):  # Декоратор для запуска функции в отдельном потоке
@@ -759,12 +848,12 @@ def multi_threading(func):  # Декоратор для запуска функ�
 @multi_threading
 def test():  # предложение ответить на вопрос каждые N единиц времени
     while 1:
-        sleep(14400)
+        sleep(3600)
         nowtime = get_time_for_notif()
         if datetime.now().hour >= 23 or datetime.now().hour <= 9:
             continue
         for i in range(len(ids)):
-            if nowtime - int(ids[i].last_answer) >= 5 and ids[i].skipped < 3:
+            if nowtime - int(ids[i].last_answer) >= 3 and ids[i].skipped < 3:
                 ids[i].skipped += 1
                 try:
                     bot.send_message(chat_id=ids[i].id,
@@ -774,7 +863,7 @@ def test():  # предложение ответить на вопрос каж�
 
                 print(get_time() + ':: ' + 'notification for ' + get_names_ind(i))
                 logging.info('notification for ' + get_names_ind(i))
-            elif ids[i].skipped >= 3 and ids[i].skipped < 4 and nowtime - int(ids[i].last_answer) >= 10:
+            elif ids[i].skipped >= 3 and ids[i].skipped < 4 and nowtime - int(ids[i].last_answer) >= 4:
                 ids[i].skipped += 1
                 try:
                     bot.send_message(chat_id=ids[i].id,
@@ -784,7 +873,7 @@ def test():  # предложение ответить на вопрос каж�
 
                 print(get_time() + ':: ' + 'notification for ' + get_names_ind(i))
                 logging.info('notification for ' + get_names_ind(i))
-            elif ids[i].skipped >= 4 and ids[i].skipped < 5 and nowtime - int(ids[i].last_answer) >= 10:
+            elif ids[i].skipped >= 4 and ids[i].skipped < 5 and nowtime - int(ids[i].last_answer) >= 5:
                 ids[i].skipped += 1
                 try:
                     bot.send_message(chat_id=ids[i].id,
