@@ -45,6 +45,10 @@ python welcome.py
 ```
 BOT_TOKEN=1827743807:AAHlesczDlh-9xrnsS6CpaybzYQC80kmL20 # пример токена
 ```
+В том же файле пропишите ваш с ботом chat_id:
+```
+ADMIN_ID=4441337444
+```
 Дело за малым! Прописываем в командную строку
 ```
 python main.py

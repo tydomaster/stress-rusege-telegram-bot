@@ -38,7 +38,7 @@ if path.exists(pachb) == 0:
     open(pachb, "w", encoding="utf8").close()
 if path.exists(".env") == 0:
     f = open(p1 + ".env", "w", encoding="utf8")
-    f.write('BOT_TOKEN=\nMAIN_INFO='
+    f.write('BOT_TOKEN=\nADMIN_ID=\nMAIN_INFO='
             + pmain + '\nMAIN_INFO_BACKUP='
             + pmainb + '\nUSED_INFO='
             + pused + '\nUSED_INFO_BACKUP='

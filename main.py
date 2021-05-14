@@ -24,6 +24,7 @@ ACHIEVEMENTS_INFO_BACKUP = os.getenv('ACHIEVEMENTS_INFO_BACKUP')
 LOGS_PATH = os.getenv('LOGS_PATH')
 BANNED_USERS = os.getenv('BANNED_USERS')
 BANNED_USERS_BACKUP = os.getenv('BANNED_USERS_BACKUP')
+ADMIN_ID = os.getenv('ADMIN_ID')
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # logs
@@ -103,7 +104,8 @@ keyboard_main = types.ReplyKeyboardMarkup(True, False)
 keyboard_main.row('слово!', 'статы', 'топ')
 keyboard_main.add('достижения', 'помощь', 'настройки')
 keyboard_settings = types.ReplyKeyboardMarkup(True, False)
-keyboard_settings.row('настройки отображения в топе', 'сбросить прогресс', 'главное меню')
+keyboard_settings.row('настройки отображения в топе', 'сбросить прогресс', 'вкл/выкл уведомления')
+keyboard_settings.row('главное меню')
 keyboard_choose_top = types.ReplyKeyboardMarkup(True, False)
 keyboard_choose_top.row('топ по рейтингу', 'топ по стрику')
 keyboard_choose_top.add('топ по % правильных', 'главное меню')
@@ -125,6 +127,10 @@ callback_buttons_loseprogress1 = types.InlineKeyboardButton(text="да", callbac
 callback_buttons_loseprogress2 = types.InlineKeyboardButton(text="нет", callback_data="loseprog_no")
 callback_buttons_loseprogress.add(callback_buttons_loseprogress1, callback_buttons_loseprogress2)
 
+callback_notifications = types.InlineKeyboardMarkup()
+callback_notifications1 = types.InlineKeyboardButton(text="включить", callback_data="notify_yes")
+callback_notifications2 = types.InlineKeyboardButton(text="выключить", callback_data="notify_no")
+callback_notifications.add(callback_notifications1, callback_notifications2)
 #клавиатуры_end
 
 
@@ -384,7 +390,7 @@ def lose_progress(id):
 def is_banned(message):
     if ids[get_id(message.chat.id)].banned == 1:
         try:
-            bot.send_message(message.chat.id, 'сори, но ты забанен :( \nпо вопросам разбана - @Rustam_Fakhretdinov')
+            bot.send_message(message.chat.id, 'ты забанен :( \nпо вопросам разбана - @Rustam_Fakhretdinov')
             logging.info(get_names_msg(message) + ' is banned, got message from bot about ban')
             print(get_time() + ':: ' + get_names_msg(message) + ' is banned, got message from bot about ban')
         except telebot.apihelper.ApiException:
@@ -396,7 +402,6 @@ def is_banned(message):
 
 @bot.message_handler(commands=['start'])  # ответ на команду /start
 def start(message):
-    print(message.chat.username)
     logging.info(get_names_msg(message) + ' pressed /start')
     print(get_time() + ':: ' + get_names_msg(message) + ' pressed /start')
     ind = get_id(message.chat.id)
@@ -426,6 +431,36 @@ def start(message):
     upd_b()
 
 
+@bot.message_handler(commands=['ban'])  # ответ на команду /ban
+def ban(message):
+    if message.chat.id != ADMIN_ID:
+        bot.send_message(message.chat.id, "я, скорее всего, еще туповат, чтобы понять, что тут написано...",
+                         reply_markup=keyboard_main)
+        return
+    text = message.text.split()
+    chat_id = int(text[1])
+    ind = get_id(chat_id)
+    ids[ind].banned = 1
+    print(get_time() + ':: ' + get_names_ind(ind) + ' has been banned')
+    logging.info(get_names_ind(ind) + ' has been banned')
+    upd_b()
+
+
+@bot.message_handler(commands=['unban'])  # ответ на команду /ban
+def ban(message):
+    if message.chat.id != ADMIN_ID:
+        bot.send_message(message.chat.id, "я, скорее всего, еще туповат, чтобы понять, что тут написано...",
+                         reply_markup=keyboard_main)
+        return
+    text = message.text.split()
+    chat_id = int(text[1])
+    ind = get_id(chat_id)
+    ids[ind].banned = 0
+    print(get_time() + ':: ' + get_names_ind(ind) + ' has been unbanned')
+    logging.info(get_names_ind(ind) + ' has been unbanned')
+    upd_b()
+
+
 @bot.message_handler(content_types=["text"])  # ответ на любой текст
 def any_msg(message):
     upd_chatid(message)
@@ -447,6 +482,9 @@ def any_msg(message):
         if ids[ind].top == 0:
             top = "ты не отображаешься в топе \=\("
             zvanie = "нет в топе \- нет звания\("
+        if ids[ind].banned == 1:
+            top = "ты в бане, тебя нет в топе \=\("
+            zvanie = "с позором забаненный"
         if ids[ind].streak >= 50:
             streak = '\+' + str(ids[ind].streak) + '🔥'
         elif ids[ind].streak > 0:
@@ -481,9 +519,11 @@ def any_msg(message):
         s = ""
         place = 0
         for i in range(10):
-            zvanie = ranks[min(len(ranks) - 1, place)]
+            if ids[i].banned == 1:
+                continue
             if ids[i].top == 0:
                 continue
+            zvanie = ranks[min(len(ranks) - 1, place)]
             s += str(place + 1) + ") "
             if str(ids[i].first_name) != "None":
                 s += str(ids[i].first_name) + " "
@@ -502,6 +542,8 @@ def any_msg(message):
         s = ""
         place = 0
         for i in range(10):
+            if ids[i].banned == 1:
+                continue
             if ids[i].top == 0:
                 continue
             s += str(place + 1) + ") "
@@ -528,6 +570,8 @@ def any_msg(message):
         for i in range(len(ids)):
             if ids[i].top == 0 or ids[i].correct + ids[i].wrong < 100:
                 continue
+            if ids[i].banned == 1:
+                continue
             s += str(place + 1) + ") "
             if str(ids[i].first_name) != "None":
                 s += str(ids[i].first_name) + " "
@@ -549,7 +593,15 @@ def any_msg(message):
         try:
             bot.send_message(message.chat.id, "ты ТОЧНО хочешь сбросить прогресс?\nВСЯ СТАТИСТИКА, ВСЕ ДОСТИЖЕНИЯ пропадут НАВСЕГДА и их НЕЛЬЗЯ будет вернуть", reply_markup=callback_buttons_loseprogress)
         except telebot.apihelper.ApiException:
+            print(get_id(message.chat.id) + ' cant lose progress')
             logging.error(message.chat.id + ' cant lose progress')
+    elif message.text.lower() == 'вкл/выкл уведомления':
+        try:
+            bot.send_message(message.chat.id, 'наверняка бот присылал тебе уведомления-напоминалки для того, чтобы ты не забывал про ударения. можешь их включить/выключить, нажав на кнопку ниже',
+                             reply_markup=callback_notifications)
+        except telebot.apihelper.ApiException:
+            print('cant send message to ' + get_id(message.chat.id))
+            logging.error('cant send message to ' + get_id(message.chat.id))
     elif message.text.lower() == 'настройки отображения в топе':
         bot.send_message(message.chat.id, "телепортирую в настройки отображения в топе...",
                          reply_markup=keyboard_top_settings)
@@ -797,18 +849,34 @@ def callback_inline(call):
         logging.info(get_names_msg(call.message) + ' now NOT available in top')
         ids[ind].top = 0
         upd_b()
-    elif len(call.data) >= 12 and call.data == "loseprog_yes":
+    elif call.data == "loseprog_yes":
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                               text="новая жизнь! новая жизнь!")
         lose_progress(call.message.chat.id)
         print(get_time() + ':: ' + get_names_msg(call.message) + ' lost all progress. hope he is ok...')
         logging.info(get_names_msg(call.message) + ' lost all progress. hope he is ok...')
         upd_b()
-    elif len(call.data) >= 11 and call.data == "loseprog_no":
+    elif call.data == "loseprog_no":
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                               text="никогда не сдавайся!")
         print(get_time() + ':: ' + get_names_msg(call.message) + ' made right decision')
         logging.info(get_names_msg(call.message) + ' made right decision')
+    elif call.data == "notify_yes":
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                              text="уведомления включены! скоро напомню о себе!)")
+        ind = get_id(call.message)
+        ids[ind].notify = 1
+        upd_b()
+        print(get_time() + ':: ' + get_names_msg(call.message) + ' turned on notifications')
+        logging.info(get_names_msg(call.message) + ' turned on notifications')
+    elif call.data == "notify_no":
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                              text="уведомления выключены.")
+        ind = get_id(call.message)
+        ids[ind].notify = 0
+        upd_b()
+        print(get_time() + ':: ' + get_names_msg(call.message) + ' turned off notifications')
+        logging.info(get_names_msg(call.message) + ' turned on notifications')
 
 
 def multi_threading(func):  # Декоратор для запуска функции в отдельном потоке
@@ -832,13 +900,13 @@ def test():  # предложение ответить на вопрос каж�
         if datetime.now().hour >= 23 or datetime.now().hour <= 9:
             continue
         for i in range(len(ids)):
-            if ids[i].notify == 0:
+            if ids[i].notify == 0 or ids[i].banned == 1:
                 continue
             if nowtime - int(ids[i].last_answer) >= 3 and ids[i].skipped < 3:
                 ids[i].skipped += 1
                 try:
                     bot.send_message(chat_id=ids[i].id,
-                                     text="привет! для тебя есть новое задание! если хочешь получить, нажми на кнопочку)")
+                                     text="привет! для тебя есть новое задание! если хочешь получить, жми на кнопку \"слово!\"")
                 except telebot.apihelper.ApiException:
                     logging.error('cant send notification to ' + get_names_ind(i))
 
@@ -848,7 +916,7 @@ def test():  # предложение ответить на вопрос каж�
                 ids[i].skipped += 1
                 try:
                     bot.send_message(chat_id=ids[i].id,
-                                 text="привет! давно тебя не было в уличных гонках! если хочешь получить вопросик, нажми на кнопочку)")
+                                 text="привет! давно тебя не было в уличных гонках! если хочешь получить вопросик, жми на кнопку \"слово!\"")
                 except telebot.apihelper.ApiException:
                     logging.error('cant send notification to ' + get_names_ind(i))
 
@@ -858,7 +926,7 @@ def test():  # предложение ответить на вопрос каж�
                 ids[i].skipped += 1
                 try:
                     bot.send_message(chat_id=ids[i].id,
-                                 text="привет! последний раз предлагаю тебе вспомнить про ударения на егэ!")
+                                 text="привет! последний раз предлагаю тебе вспомнить про ударения на егэ! если хочешь получить вопросик, жми на кнопку \"слово!\"")
                 except telebot.apihelper.ApiException:
                     logging.error('cant send last notification to ' + get_names_ind(i))
 
