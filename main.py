@@ -1,6 +1,8 @@
 import os
 import telebot
 import logging
+import schedule
+import time
 from telebot import types
 from random import randint
 from time import sleep
@@ -984,48 +986,53 @@ def multi_threading(func):  # Декоратор для запуска функ�
     return wrapper
 
 
-@multi_threading
-def test():  # предложение ответить на вопрос каждые N единиц времени
-    while 1:
-        sleep(60000)
-        nowtime = get_time_for_notif()
-        if datetime.now().hour >= 23 or datetime.now().hour <= 9:
+def game_notification():
+    for i in range(len(ids)):
+        if ids[i].notify_game == 0 or ids[i].banned == 1:
             continue
-        for i in range(len(ids)):
-            if ids[i].notify_game == 0 or ids[i].banned == 1:
-                continue
-            if nowtime - int(ids[i].last_answer) >= 6 and ids[i].skipped < 3:
-                ids[i].skipped += 1
-                try:
-                    bot.send_message(chat_id=ids[i].id,
-                                     text="привет! для тебя есть новое задание! если хочешь получить, жми на кнопку \"слово!\"\nвыключить такие уведомления можно в настройках.")
-                except telebot.apihelper.ApiException:
-                    logging.error('cant send notification to ' + get_names_ind(i))
+        if nowtime - int(ids[i].last_answer) >= 15 and ids[i].skipped < 3:
+            ids[i].skipped += 1
+            try:
+                bot.send_message(chat_id=ids[i].id,
+                                 text="привет! для тебя есть новое задание! если хочешь получить, жми на кнопку \"слово!\"\nвыключить такие уведомления можно в настройках.")
+            except telebot.apihelper.ApiException:
+                logging.error('cant send notification to ' + get_names_ind(i))
 
-                print(get_time() + ':: ' + 'notification for ' + get_names_ind(i))
-                logging.info('notification for ' + get_names_ind(i))
-            elif ids[i].skipped >= 3 and ids[i].skipped < 4 and nowtime - int(ids[i].last_answer) >= 8:
-                ids[i].skipped += 1
-                try:
-                    bot.send_message(chat_id=ids[i].id,
+            print(get_time() + ':: ' + 'notification for ' + get_names_ind(i))
+            logging.info('notification for ' + get_names_ind(i))
+        elif 3 <= ids[i].skipped < 4 and nowtime - int(ids[i].last_answer) >= 15:
+            ids[i].skipped += 1
+            try:
+                bot.send_message(chat_id=ids[i].id,
                                  text="привет! давно тебя не было в уличных гонках! если хочешь получить вопросик, жми на кнопку \"слово!\"\nвыключить такие уведомления можно в настройках.")
-                except telebot.apihelper.ApiException:
-                    logging.error('cant send notification to ' + get_names_ind(i))
+            except telebot.apihelper.ApiException:
+                logging.error('cant send notification to ' + get_names_ind(i))
 
-                print(get_time() + ':: ' + 'notification for ' + get_names_ind(i))
-                logging.info('notification for ' + get_names_ind(i))
-            elif ids[i].skipped >= 4 and ids[i].skipped < 5 and nowtime - int(ids[i].last_answer) >= 10:
-                ids[i].skipped += 1
-                try:
-                    bot.send_message(chat_id=ids[i].id,
+            print(get_time() + ':: ' + 'notification for ' + get_names_ind(i))
+            logging.info('notification for ' + get_names_ind(i))
+        elif 4 <= ids[i].skipped < 5 and nowtime - int(ids[i].last_answer) >= 30:
+            ids[i].skipped += 1
+            try:
+                bot.send_message(chat_id=ids[i].id,
                                  text="привет! последний раз предлагаю тебе вспомнить про ударения на егэ! если хочешь получить вопросик, жми на кнопку \"слово!\"\nвыключить такие уведомления можно в настройках.")
-                except telebot.apihelper.ApiException:
-                    logging.error('cant send last notification to ' + get_names_ind(i))
+            except telebot.apihelper.ApiException:
+                logging.error('cant send last notification to ' + get_names_ind(i))
 
-                print(get_time() + ':: ' + 'LAST notification for ' + get_names_ind(i))
-                logging.info('LAST notification for ' + get_names_ind(i))
-        upd_b()
+            print(get_time() + ':: ' + 'LAST notification for ' + get_names_ind(i))
+            logging.info('LAST notification for ' + get_names_ind(i))
+    upd_b()
+
+
+schedule.every().day.at("20:00").do(game_notification)
+
+
+@multi_threading
+def reminder():  # предложение ответить на вопрос каждые N единиц времени
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
 
 setup()
-test()
+reminder()
 bot.polling(none_stop=True, interval=0)
