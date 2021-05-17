@@ -987,6 +987,7 @@ def multi_threading(func):  # Декоратор для запуска функ�
 
 
 def game_notification():
+    nowtime = get_time_for_notif()
     for i in range(len(ids)):
         if ids[i].notify_game == 0 or ids[i].banned == 1:
             continue
