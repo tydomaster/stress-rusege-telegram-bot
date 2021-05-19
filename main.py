@@ -3,6 +3,7 @@ import telebot
 import logging
 import schedule
 import time
+import sys
 from telebot import types
 from random import randint
 from time import sleep
@@ -1024,7 +1025,7 @@ def game_notification():
     upd_b()
 
 
-schedule.every().day.at("20:00").do(game_notification)
+schedule.every().day.at("18:00").do(game_notification)
 
 
 @multi_threading
